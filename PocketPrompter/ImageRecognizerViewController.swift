@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ImageRecognizerViewController: UIViewController {
+class ImageRecognizerViewController: UIViewController, UINavigationControllerDelegate, UIImagePickerControllerDelegate {
     
     // MARK : - IBOutlets
     @IBOutlet weak var titleTextField: UITextField!
@@ -130,7 +130,7 @@ class ImageRecognizerViewController: UIViewController {
         bodyTextView.text = tesseract.recognizedText
         bodyTextView.isEditable = true
         // 8
-        activityIndicatorView.startAnimating()
+        activityIndicatorView.stopAnimating()
     }
     
 
