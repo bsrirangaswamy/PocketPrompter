@@ -1,14 +1,20 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11134" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16G29" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="OAZ-Q6-Zxd">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11106"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Pocket Prompter-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="PocketPrompter" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -16,11 +22,107 @@
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rSg-9o-Pfa">
+                                <rect key="frame" x="164" y="318" width="46" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.3907738785" green="0.67876025880000002" blue="0.58943388839999999" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal" title="ADD">
+                                    <color key="titleColor" red="0.72922585230000003" green="0.27575049839999999" blue="0.36728372539999998" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="addANewFileButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="HjV-KI-epi"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </view>
+                    <navigationItem key="navigationItem" title="Pocket Prompter" id="XRC-pG-zyb">
+                        <barButtonItem key="backBarButtonItem" title="Back" id="ilP-lv-HBG"/>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="addANewFileButton" destination="rSg-9o-Pfa" id="uJR-fd-q8m"/>
+                        <segue destination="w8W-PC-LyA" kind="show" identifier="imageRecognizer" id="MtH-7e-WvC"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="1086" y="-544"/>
+        </scene>
+        <!--Image Recognizer View Controller-->
+        <scene sceneID="YFa-wr-XJA">
+            <objects>
+                <viewController id="w8W-PC-LyA" customClass="ImageRecognizerViewController" customModule="PocketPrompter" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="bB3-OP-9wL"/>
+                        <viewControllerLayoutGuide type="bottom" id="Fwv-8Q-uH6"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="cIV-ma-j5e">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="wmF-hj-EJO">
+                                <rect key="frame" x="16" y="64" width="343" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="F1h-j4-doc"/>
+                                </constraints>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="P4x-Pv-LYI">
+                                <rect key="frame" x="16" y="114" width="343" height="486"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="ly9-6w-hs3">
+                                <rect key="frame" x="149.5" y="299.5" width="75" height="67"/>
+                                <color key="color" red="0.0" green="0.47711658099999998" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                            </activityIndicatorView>
+                        </subviews>
+                        <color key="backgroundColor" red="0.3907738785" green="0.67876025880000002" blue="0.58943388839999999" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="trailingMargin" secondItem="wmF-hj-EJO" secondAttribute="trailing" id="CcP-16-2wV"/>
+                            <constraint firstItem="ly9-6w-hs3" firstAttribute="centerY" secondItem="cIV-ma-j5e" secondAttribute="centerY" id="OQY-y4-4HY"/>
+                            <constraint firstItem="ly9-6w-hs3" firstAttribute="width" secondItem="cIV-ma-j5e" secondAttribute="width" multiplier="0.2" id="OY2-8t-3Il"/>
+                            <constraint firstItem="wmF-hj-EJO" firstAttribute="top" secondItem="bB3-OP-9wL" secondAttribute="bottom" id="Wqr-5V-8O2"/>
+                            <constraint firstItem="P4x-Pv-LYI" firstAttribute="leading" secondItem="cIV-ma-j5e" secondAttribute="leadingMargin" id="ah2-4U-WmL"/>
+                            <constraint firstItem="P4x-Pv-LYI" firstAttribute="top" secondItem="wmF-hj-EJO" secondAttribute="bottom" id="bBq-tI-Eb2"/>
+                            <constraint firstItem="Fwv-8Q-uH6" firstAttribute="top" secondItem="P4x-Pv-LYI" secondAttribute="bottom" constant="67" id="htl-9S-x7A"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="P4x-Pv-LYI" secondAttribute="trailing" id="iM9-W9-6vQ"/>
+                            <constraint firstItem="ly9-6w-hs3" firstAttribute="height" secondItem="cIV-ma-j5e" secondAttribute="height" multiplier="0.1" id="jwl-d4-ZlY"/>
+                            <constraint firstItem="ly9-6w-hs3" firstAttribute="centerX" secondItem="cIV-ma-j5e" secondAttribute="centerX" id="ovb-eu-n3m"/>
+                            <constraint firstItem="wmF-hj-EJO" firstAttribute="leading" secondItem="cIV-ma-j5e" secondAttribute="leadingMargin" id="qb2-eW-qGe"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="activityIndicatorView" destination="ly9-6w-hs3" id="IKE-QI-obh"/>
+                        <outlet property="bodyTextView" destination="P4x-Pv-LYI" id="653-Pk-i4b"/>
+                        <outlet property="titleTextField" destination="wmF-hj-EJO" id="8Un-X5-qXu"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="K0d-DH-Ape" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1912.8" y="-535.68215892053979"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="yoO-Bj-NKu">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="OAZ-Q6-Zxd" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="2PC-fu-LOk">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="cGx-jR-rkv"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="OIh-ul-hI2" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="133.59999999999999" y="-543.77811094452773"/>
         </scene>
     </scenes>
 </document>

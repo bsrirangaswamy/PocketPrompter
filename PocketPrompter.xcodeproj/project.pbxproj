@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2D35236E1F543D120057AB6E /* ImageRecognizerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D35236D1F543D120057AB6E /* ImageRecognizerViewController.swift */; };
+		2D35236F1F543D120057AB6E /* ImageRecognizerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D35236D1F543D120057AB6E /* ImageRecognizerViewController.swift */; };
+		2D3523701F543D120057AB6E /* ImageRecognizerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D35236D1F543D120057AB6E /* ImageRecognizerViewController.swift */; };
 		2D48307D1F5050FD00B12DE7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D48307C1F5050FD00B12DE7 /* AppDelegate.swift */; };
 		2D48307F1F5050FD00B12DE7 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D48307E1F5050FD00B12DE7 /* ViewController.swift */; };
 		2D4830821F5050FD00B12DE7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2D4830801F5050FD00B12DE7 /* Main.storyboard */; };
@@ -15,6 +18,11 @@
 		2D48308A1F5050FD00B12DE7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2D4830881F5050FD00B12DE7 /* LaunchScreen.storyboard */; };
 		2D4830951F5050FE00B12DE7 /* PocketPrompterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D4830941F5050FE00B12DE7 /* PocketPrompterTests.swift */; };
 		2D4830A01F5050FE00B12DE7 /* PocketPrompterUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D48309F1F5050FE00B12DE7 /* PocketPrompterUITests.swift */; };
+		2D5094B41F505A6800FFBFB4 /* TesseractOCR.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2D5094B31F505A6800FFBFB4 /* TesseractOCR.framework */; };
+		2D5094B61F505A7100FFBFB4 /* tessdata in Resources */ = {isa = PBXBuildFile; fileRef = 2D5094B51F505A7100FFBFB4 /* tessdata */; };
+		2D5E52141F50555E00263E38 /* CoreImage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2D5E52131F50555E00263E38 /* CoreImage.framework */; };
+		2D5E52161F50558500263E38 /* libstdc++.6.0.9.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 2D5E52151F50558500263E38 /* libstdc++.6.0.9.tbd */; };
+		2D8718CA1F505C9F00303221 /* PhantomBridger.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D8718C91F505C9F00303221 /* PhantomBridger.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -35,6 +43,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		2D35236D1F543D120057AB6E /* ImageRecognizerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageRecognizerViewController.swift; sourceTree = "<group>"; };
 		2D4830791F5050FD00B12DE7 /* PocketPrompter.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PocketPrompter.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2D48307C1F5050FD00B12DE7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2D48307E1F5050FD00B12DE7 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -49,6 +58,12 @@
 		2D48309B1F5050FE00B12DE7 /* PocketPrompterUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PocketPrompterUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		2D48309F1F5050FE00B12DE7 /* PocketPrompterUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PocketPrompterUITests.swift; sourceTree = "<group>"; };
 		2D4830A11F5050FE00B12DE7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		2D5094B31F505A6800FFBFB4 /* TesseractOCR.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = TesseractOCR.framework; path = "Tesseract Resources/TesseractOCR.framework"; sourceTree = "<group>"; };
+		2D5094B51F505A7100FFBFB4 /* tessdata */ = {isa = PBXFileReference; lastKnownFileType = folder; name = tessdata; path = "Tesseract Resources/tessdata"; sourceTree = "<group>"; };
+		2D5E52131F50555E00263E38 /* CoreImage.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreImage.framework; path = System/Library/Frameworks/CoreImage.framework; sourceTree = SDKROOT; };
+		2D5E52151F50558500263E38 /* libstdc++.6.0.9.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libstdc++.6.0.9.tbd"; path = "usr/lib/libstdc++.6.0.9.tbd"; sourceTree = SDKROOT; };
+		2D8718C81F505C9F00303221 /* PocketPrompter-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "PocketPrompter-Bridging-Header.h"; sourceTree = "<group>"; };
+		2D8718C91F505C9F00303221 /* PhantomBridger.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PhantomBridger.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +71,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2D5094B41F505A6800FFBFB4 /* TesseractOCR.framework in Frameworks */,
+				2D5E52161F50558500263E38 /* libstdc++.6.0.9.tbd in Frameworks */,
+				2D5E52141F50555E00263E38 /* CoreImage.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -83,6 +101,7 @@
 				2D4830931F5050FE00B12DE7 /* PocketPrompterTests */,
 				2D48309E1F5050FE00B12DE7 /* PocketPrompterUITests */,
 				2D48307A1F5050FD00B12DE7 /* Products */,
+				2D5E52121F50555E00263E38 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -101,11 +120,16 @@
 			children = (
 				2D48307C1F5050FD00B12DE7 /* AppDelegate.swift */,
 				2D48307E1F5050FD00B12DE7 /* ViewController.swift */,
+				2D35236D1F543D120057AB6E /* ImageRecognizerViewController.swift */,
 				2D4830801F5050FD00B12DE7 /* Main.storyboard */,
 				2D4830861F5050FD00B12DE7 /* Assets.xcassets */,
 				2D4830881F5050FD00B12DE7 /* LaunchScreen.storyboard */,
 				2D48308B1F5050FD00B12DE7 /* Info.plist */,
 				2D4830831F5050FD00B12DE7 /* PocketPrompter.xcdatamodeld */,
+				2D5094B51F505A7100FFBFB4 /* tessdata */,
+				2D5094B31F505A6800FFBFB4 /* TesseractOCR.framework */,
+				2D8718C91F505C9F00303221 /* PhantomBridger.m */,
+				2D8718C81F505C9F00303221 /* PocketPrompter-Bridging-Header.h */,
 			);
 			path = PocketPrompter;
 			sourceTree = "<group>";
@@ -126,6 +150,15 @@
 				2D4830A11F5050FE00B12DE7 /* Info.plist */,
 			);
 			path = PocketPrompterUITests;
+			sourceTree = "<group>";
+		};
+		2D5E52121F50555E00263E38 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				2D5E52151F50558500263E38 /* libstdc++.6.0.9.tbd */,
+				2D5E52131F50555E00263E38 /* CoreImage.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -197,6 +230,7 @@
 					2D4830781F5050FD00B12DE7 = {
 						CreatedOnToolsVersion = 8.3.3;
 						DevelopmentTeam = 8PXGQZP8AE;
+						LastSwiftMigration = 0830;
 						ProvisioningStyle = Automatic;
 					};
 					2D48308F1F5050FE00B12DE7 = {
@@ -239,6 +273,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				2D48308A1F5050FD00B12DE7 /* LaunchScreen.storyboard in Resources */,
+				2D5094B61F505A7100FFBFB4 /* tessdata in Resources */,
 				2D4830871F5050FD00B12DE7 /* Assets.xcassets in Resources */,
 				2D4830821F5050FD00B12DE7 /* Main.storyboard in Resources */,
 			);
@@ -266,6 +301,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				2D48307F1F5050FD00B12DE7 /* ViewController.swift in Sources */,
+				2D35236E1F543D120057AB6E /* ImageRecognizerViewController.swift in Sources */,
+				2D8718CA1F505C9F00303221 /* PhantomBridger.m in Sources */,
 				2D4830851F5050FD00B12DE7 /* PocketPrompter.xcdatamodeld in Sources */,
 				2D48307D1F5050FD00B12DE7 /* AppDelegate.swift in Sources */,
 			);
@@ -275,6 +312,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2D35236F1F543D120057AB6E /* ImageRecognizerViewController.swift in Sources */,
 				2D4830951F5050FE00B12DE7 /* PocketPrompterTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -283,6 +321,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2D3523701F543D120057AB6E /* ImageRecognizerViewController.swift in Sources */,
 				2D4830A01F5050FE00B12DE7 /* PocketPrompterUITests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -421,11 +460,21 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_CXX_LIBRARY = "compiler-default";
+				CLANG_ENABLE_MODULES = YES;
 				DEVELOPMENT_TEAM = 8PXGQZP8AE;
+				ENABLE_BITCODE = NO;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/PocketPrompter/Tesseract\\ Resources",
+				);
 				INFOPLIST_FILE = PocketPrompter/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				OTHER_LDFLAGS = "-lstdc++";
 				PRODUCT_BUNDLE_IDENTIFIER = PriBa.PocketPrompter;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "PocketPrompter/PocketPrompter-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
@@ -434,11 +483,20 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_CXX_LIBRARY = "compiler-default";
+				CLANG_ENABLE_MODULES = YES;
 				DEVELOPMENT_TEAM = 8PXGQZP8AE;
+				ENABLE_BITCODE = NO;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/PocketPrompter/Tesseract\\ Resources",
+				);
 				INFOPLIST_FILE = PocketPrompter/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				OTHER_LDFLAGS = "-lstdc++";
 				PRODUCT_BUNDLE_IDENTIFIER = PriBa.PocketPrompter;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "PocketPrompter/PocketPrompter-Bridging-Header.h";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
@@ -448,9 +506,11 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_CXX_LIBRARY = "compiler-default";
 				DEVELOPMENT_TEAM = 8PXGQZP8AE;
 				INFOPLIST_FILE = PocketPrompterTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				OTHER_LDFLAGS = "-lstdc++";
 				PRODUCT_BUNDLE_IDENTIFIER = PriBa.PocketPrompterTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
@@ -463,9 +523,11 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_CXX_LIBRARY = "compiler-default";
 				DEVELOPMENT_TEAM = 8PXGQZP8AE;
 				INFOPLIST_FILE = PocketPrompterTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				OTHER_LDFLAGS = "-lstdc++";
 				PRODUCT_BUNDLE_IDENTIFIER = PriBa.PocketPrompterTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
@@ -477,9 +539,11 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CLANG_CXX_LIBRARY = "compiler-default";
 				DEVELOPMENT_TEAM = 8PXGQZP8AE;
 				INFOPLIST_FILE = PocketPrompterUITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				OTHER_LDFLAGS = "-lstdc++";
 				PRODUCT_BUNDLE_IDENTIFIER = PriBa.PocketPrompterUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
@@ -491,9 +555,11 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CLANG_CXX_LIBRARY = "compiler-default";
 				DEVELOPMENT_TEAM = 8PXGQZP8AE;
 				INFOPLIST_FILE = PocketPrompterUITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				OTHER_LDFLAGS = "-lstdc++";
 				PRODUCT_BUNDLE_IDENTIFIER = PriBa.PocketPrompterUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
@@ -520,6 +586,7 @@
 				2D4830A61F5050FE00B12DE7 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		2D4830A71F5050FE00B12DE7 /* Build configuration list for PBXNativeTarget "PocketPrompterTests" */ = {
 			isa = XCConfigurationList;
@@ -528,6 +595,7 @@
 				2D4830A91F5050FE00B12DE7 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		2D4830AA1F5050FE00B12DE7 /* Build configuration list for PBXNativeTarget "PocketPrompterUITests" */ = {
 			isa = XCConfigurationList;
@@ -536,6 +604,7 @@
 				2D4830AC1F5050FE00B12DE7 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 
