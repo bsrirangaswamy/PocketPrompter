@@ -14,6 +14,13 @@ class ImageRecognizerViewController: UIViewController, UINavigationControllerDel
     @IBOutlet weak var titleTextField: UITextField!
     @IBOutlet weak var bodyTextView: UITextView!
     @IBOutlet weak var activityIndicatorView: UIActivityIndicatorView!
+    @IBOutlet weak var bodyTextviewToSaveButtonTConstraint: NSLayoutConstraint!
+    
+    var editModeView: UIView?
+    
+    deinit {
+        NotificationCenter.default.removeObserver(self)
+    }
     
 
     override func viewDidLoad() {
@@ -21,6 +28,24 @@ class ImageRecognizerViewController: UIViewController, UINavigationControllerDel
 
         // Do any additional setup after loading the view.
         self.imagePickerAction()
+        
+        // assign delegate to the view controller
+        bodyTextView.delegate = self
+        
+        let screenSize: CGRect = UIScreen.main.bounds
+        self.editModeView = UIView(frame: CGRect(x: 0, y: 0, width: screenSize.width, height: screenSize.height))
+        self.editModeView?.backgroundColor = UIColor.clear
+        self.view.addSubview(editModeView!)
+        
+        self.editModeView?.isHidden = true
+        
+        let tap = UITapGestureRecognizer(target: self, action:#selector(dismisskeyboard(sender:)))
+        self.editModeView?.addGestureRecognizer(tap)
+        self.editModeView?.isUserInteractionEnabled = true
+        
+        // add observers for keyboard
+        NotificationCenter.default.addObserver(self, selector: #selector(self.keyboardWillShow), name: NSNotification.Name.UIKeyboardWillShow, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(self.keyboardWillHide(notification:)), name: Notification.Name.UIKeyboardWillHide, object: nil)
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -133,6 +158,28 @@ class ImageRecognizerViewController: UIViewController, UINavigationControllerDel
         activityIndicatorView.stopAnimating()
     }
     
+    // dismiss keyboard for text view and text field
+    func dismisskeyboard(sender: UITapGestureRecognizer? = nil) {
+        print("Bala dismiss keyboard")
+        self.view.endEditing(true)
+    }
+    
+    // Keyboard notification methods
+    func keyboardWillShow(notification: NSNotification) {
+        if let keyboardSize = (notification.userInfo?[UIKeyboardFrameBeginUserInfoKey] as? NSValue)?.cgRectValue {
+            if self.bodyTextviewToSaveButtonTConstraint.constant == 10 {
+                self.bodyTextviewToSaveButtonTConstraint.constant += (keyboardSize.height - 50)
+            }
+        }
+        self.editModeView?.isHidden = false
+    }
+    
+    func keyboardWillHide(notification: NSNotification) {
+        if self.bodyTextviewToSaveButtonTConstraint.constant != 10{
+            self.bodyTextviewToSaveButtonTConstraint.constant = 10.0
+        }
+        self.editModeView?.isHidden = true
+    }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -150,4 +197,29 @@ class ImageRecognizerViewController: UIViewController, UINavigationControllerDel
     }
     */
 
+}
+
+extension ImageRecognizerViewController: UITextViewDelegate {
+    // MARK :- UITextViewDelegate methods
+    
+    func textViewShouldBeginEditing(_ textView: UITextView) -> Bool {
+        print ("Bala textViewShouldBeginEditing")
+        return true
+    }
+    
+    func textViewDidChangeSelection(_ textView: UITextView) {
+        print ("Bala textViewDidChangeSelection")
+    }
+    
+    func textViewDidChange(_ textView: UITextView) {
+        print ("Bala textViewDidChange")
+    }
+    
+    func textViewDidBeginEditing(_ textView: UITextView) {
+        print ("Bala textViewDidBeginEditing")
+    }
+    
+    func textViewDidEndEditing(_ textView: UITextView) {
+        print ("Bala textViewDidEndEditing")
+    }
 }
