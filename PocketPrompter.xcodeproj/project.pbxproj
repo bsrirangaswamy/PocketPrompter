@@ -26,6 +26,12 @@
 		2D5E52141F50555E00263E38 /* CoreImage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2D5E52131F50555E00263E38 /* CoreImage.framework */; };
 		2D5E52161F50558500263E38 /* libstdc++.6.0.9.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 2D5E52151F50558500263E38 /* libstdc++.6.0.9.tbd */; };
 		2D8718CA1F505C9F00303221 /* PhantomBridger.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D8718C91F505C9F00303221 /* PhantomBridger.m */; };
+		2D9D3F6F1F73E78C005A6810 /* PromptDataTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D9D3F6D1F73E78C005A6810 /* PromptDataTableViewCell.swift */; };
+		2D9D3F701F73E78C005A6810 /* PromptDataTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D9D3F6D1F73E78C005A6810 /* PromptDataTableViewCell.swift */; };
+		2D9D3F711F73E78C005A6810 /* PromptDataTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D9D3F6D1F73E78C005A6810 /* PromptDataTableViewCell.swift */; };
+		2D9D3F721F73E78C005A6810 /* PromptDataTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2D9D3F6E1F73E78C005A6810 /* PromptDataTableViewCell.xib */; };
+		2D9D3F731F73E78C005A6810 /* PromptDataTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2D9D3F6E1F73E78C005A6810 /* PromptDataTableViewCell.xib */; };
+		2D9D3F741F73E78C005A6810 /* PromptDataTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2D9D3F6E1F73E78C005A6810 /* PromptDataTableViewCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -68,6 +74,8 @@
 		2D5E52151F50558500263E38 /* libstdc++.6.0.9.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libstdc++.6.0.9.tbd"; path = "usr/lib/libstdc++.6.0.9.tbd"; sourceTree = SDKROOT; };
 		2D8718C81F505C9F00303221 /* PocketPrompter-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "PocketPrompter-Bridging-Header.h"; sourceTree = "<group>"; };
 		2D8718C91F505C9F00303221 /* PhantomBridger.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PhantomBridger.m; sourceTree = "<group>"; };
+		2D9D3F6D1F73E78C005A6810 /* PromptDataTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PromptDataTableViewCell.swift; path = Cells/PromptDataTableViewCell.swift; sourceTree = "<group>"; };
+		2D9D3F6E1F73E78C005A6810 /* PromptDataTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = PromptDataTableViewCell.xib; path = Cells/PromptDataTableViewCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -135,6 +143,8 @@
 				2D48307E1F5050FD00B12DE7 /* ViewController.swift */,
 				2D35236D1F543D120057AB6E /* ImageRecognizerViewController.swift */,
 				2D4830801F5050FD00B12DE7 /* Main.storyboard */,
+				2D9D3F6D1F73E78C005A6810 /* PromptDataTableViewCell.swift */,
+				2D9D3F6E1F73E78C005A6810 /* PromptDataTableViewCell.xib */,
 				2D4830861F5050FD00B12DE7 /* Assets.xcassets */,
 				2D4830881F5050FD00B12DE7 /* LaunchScreen.storyboard */,
 				2D48308B1F5050FD00B12DE7 /* Info.plist */,
@@ -289,6 +299,7 @@
 				2D5094B61F505A7100FFBFB4 /* tessdata in Resources */,
 				2D4830871F5050FD00B12DE7 /* Assets.xcassets in Resources */,
 				2D4830821F5050FD00B12DE7 /* Main.storyboard in Resources */,
+				2D9D3F721F73E78C005A6810 /* PromptDataTableViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -296,6 +307,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2D9D3F731F73E78C005A6810 /* PromptDataTableViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -303,6 +315,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2D9D3F741F73E78C005A6810 /* PromptDataTableViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -314,6 +327,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				2D48307F1F5050FD00B12DE7 /* ViewController.swift in Sources */,
+				2D9D3F6F1F73E78C005A6810 /* PromptDataTableViewCell.swift in Sources */,
 				2D35237B1F62C1850057AB6E /* PromptData.swift in Sources */,
 				2D35236E1F543D120057AB6E /* ImageRecognizerViewController.swift in Sources */,
 				2D8718CA1F505C9F00303221 /* PhantomBridger.m in Sources */,
@@ -329,6 +343,7 @@
 				2D35236F1F543D120057AB6E /* ImageRecognizerViewController.swift in Sources */,
 				2D35237C1F62C1850057AB6E /* PromptData.swift in Sources */,
 				2D4830951F5050FE00B12DE7 /* PocketPrompterTests.swift in Sources */,
+				2D9D3F701F73E78C005A6810 /* PromptDataTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -339,6 +354,7 @@
 				2D3523701F543D120057AB6E /* ImageRecognizerViewController.swift in Sources */,
 				2D35237D1F62C1850057AB6E /* PromptData.swift in Sources */,
 				2D4830A01F5050FE00B12DE7 /* PocketPrompterUITests.swift in Sources */,
+				2D9D3F711F73E78C005A6810 /* PromptDataTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

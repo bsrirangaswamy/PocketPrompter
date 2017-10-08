@@ -26,3 +26,8 @@ class PromptData: NSObject {
     }
 
 }
+
+enum SavedUserData: String {
+    case title = "title"
+    case bodyText = "bodyText"
+}

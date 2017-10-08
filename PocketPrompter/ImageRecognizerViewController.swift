@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import CoreData
 
 class ImageRecognizerViewController: UIViewController, UINavigationControllerDelegate, UIImagePickerControllerDelegate {
     
@@ -17,6 +18,10 @@ class ImageRecognizerViewController: UIViewController, UINavigationControllerDel
     @IBOutlet weak var bodyTextviewToSaveButtonTConstraint: NSLayoutConstraint!
     
     var editModeView: UIView?
+    var userData: [NSManagedObject] = []
+    var savedTitle: String?
+    var savedBodyText: String?
+    var objectIndex: Int?
     
     deinit {
         NotificationCenter.default.removeObserver(self)
@@ -25,9 +30,6 @@ class ImageRecognizerViewController: UIViewController, UINavigationControllerDel
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
-        self.imagePickerAction()
         
         // assign delegate to the view controller
         bodyTextView.delegate = self
@@ -46,6 +48,15 @@ class ImageRecognizerViewController: UIViewController, UINavigationControllerDel
         // add observers for keyboard
         NotificationCenter.default.addObserver(self, selector: #selector(self.keyboardWillShow), name: NSNotification.Name.UIKeyboardWillShow, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(self.keyboardWillHide(notification:)), name: Notification.Name.UIKeyboardWillHide, object: nil)
+        
+        // if data available then, present data
+        if let savedTitle = savedTitle, let savedBodyText = savedBodyText {
+            titleTextField.text = savedTitle
+            bodyTextView.text = savedBodyText
+        } else {
+            // Load image picker
+            self.imagePickerAction()
+        }
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -181,6 +192,80 @@ class ImageRecognizerViewController: UIViewController, UINavigationControllerDel
         self.editModeView?.isHidden = true
     }
 
+    @IBAction func saveButtonPressed(_ sender: UIButton) {
+        if let _ = objectIndex {
+            // data already exists in core data
+            updateExistingStoredData()
+        } else {
+            // new data to be entered into core data
+            createNewData()
+        }
+        
+        self.navigationController!.popToRootViewController(animated: true)
+    }
+    
+    func createNewData() {
+        guard let appDelegate =
+            UIApplication.shared.delegate as? AppDelegate else {
+                return
+        }
+        
+        // 1
+        let managedContext =
+            appDelegate.persistentContainer.viewContext
+        
+        // 2
+        let entity =
+            NSEntityDescription.entity(forEntityName: "UserFile",
+                                       in: managedContext)!
+        
+        let saveFile = NSManagedObject(entity: entity,
+                                       insertInto: managedContext)
+        
+        // 3
+        saveFile.setValue(titleTextField.text, forKeyPath: SavedUserData.title.rawValue)
+        saveFile.setValue(bodyTextView.text, forKeyPath: SavedUserData.bodyText.rawValue)
+        
+        // 4
+        do {
+            try managedContext.save()
+            userData.append(saveFile)
+        } catch let error as NSError {
+            print("Could not save. \(error), \(error.userInfo)")
+        }
+    }
+    
+    func updateExistingStoredData() {
+        guard let appDelegate =
+            UIApplication.shared.delegate as? AppDelegate else { return }
+        
+        let managedContext = appDelegate.persistentContainer.viewContext
+        let fetchRequest = NSFetchRequest<NSManagedObject>(entityName: "UserFile")
+        
+        do {
+            userData = try managedContext.fetch(fetchRequest)
+            if let index = objectIndex, userData.count > index {
+                print ("Bala fetched data success")
+                
+                let storedFile = userData[index]
+                
+                storedFile.setValue(titleTextField.text, forKeyPath: SavedUserData.title.rawValue)
+                storedFile.setValue(bodyTextView.text, forKeyPath: SavedUserData.bodyText.rawValue)
+                
+                do {
+                    try managedContext.save()
+                } catch let error as NSError {
+                    print("Could not save. \(error), \(error.userInfo)")
+                }
+                
+            }
+        } catch let error as NSError {
+            print("Bala Could not fetch. \(error), \(error.userInfo)")
+        }
+        
+    }
+    
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
