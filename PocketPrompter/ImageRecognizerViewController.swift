@@ -118,7 +118,7 @@ class ImageRecognizerViewController: UIViewController, UINavigationControllerDel
         // start animating activity Indicator
         activityIndicatorView.startAnimating()
         
-        dismiss(animated: true, completion: {
+        dismiss(animated: false, completion: {
             self.performImageRecognition(scaledImage)
         })
     }
@@ -201,7 +201,12 @@ class ImageRecognizerViewController: UIViewController, UINavigationControllerDel
             createNewData()
         }
         
-        self.navigationController!.popToRootViewController(animated: true)
+        self.navigationController!.dismiss(animated: true, completion: nil)
+    }
+    
+    
+    @IBAction func cancelButtonPressed(_ sender: UIBarButtonItem) {
+        self.navigationController!.dismiss(animated: true, completion: nil)
     }
     
     func createNewData() {
@@ -245,7 +250,7 @@ class ImageRecognizerViewController: UIViewController, UINavigationControllerDel
         do {
             userData = try managedContext.fetch(fetchRequest)
             if let index = objectIndex, userData.count > index {
-                print ("Bala fetched data success")
+                print ("Bala updateExistingStoredData success")
                 
                 let storedFile = userData[index]
                 

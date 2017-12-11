@@ -12,7 +12,6 @@ import CoreData
 class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
     // MARK : - IBOutlets
-    @IBOutlet weak var addANewFileButton: UIButton!
     @IBOutlet weak var userDataTableView: UITableView!
     
     var userDataArray: [NSManagedObject] = []
@@ -29,32 +28,12 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
-        guard let appDelegate =
-            UIApplication.shared.delegate as? AppDelegate else { return }
-        
-        let managedContext = appDelegate.persistentContainer.viewContext
-        let fetchRequest = NSFetchRequest<NSManagedObject>(entityName: "UserFile")
-        
-        do {
-            userDataArray = try managedContext.fetch(fetchRequest)
-            if userDataArray.count > 0 {
-                print ("Bala fetched data success")
-                userDataTableView.reloadData()
-            }
-        } catch let error as NSError {
-            print("Bala Could not fetch. \(error), \(error.userInfo)")
-        }
+        self.fetchStoredData()
     }
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         currentSelectedIndex = -1
-    }
-    
-    
-    @IBAction func addANewFileButtonPressed(_ sender: UIButton) {
-        currentSelectedIndex = -1
-        performSegue(withIdentifier: "imageRecognizer", sender: self)
     }
     
     // MARK :- TableView Delegates
@@ -83,6 +62,18 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         self.performSegue(withIdentifier: "imageRecognizer", sender: self)
     }
     
+    func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
+        return true
+    }
+    
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
+        
+        if (editingStyle == UITableViewCellEditingStyle.delete) {
+            // handle delete (by removing the data from your array and updating the tableview)
+            self.deleteExistingStoredData(index: indexPath.row)
+        }
+    }
+    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         
         // Guard to check if the action is performed by a table view selection or new file selection
@@ -93,7 +84,9 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         
         switch segue.identifier {
         case .some(let seg) where seg.contains("imageRecognizer"):
-            let dest = segue.destination as! ImageRecognizerViewController
+            let navController = segue.destination as! UINavigationController
+            
+            let dest = navController.topViewController as! ImageRecognizerViewController
             
             dest.objectIndex = currentSelectedIndex
             
@@ -107,6 +100,53 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         default:
             break
         }
+    }
+    
+    func fetchStoredData() {
+        guard let appDelegate =
+            UIApplication.shared.delegate as? AppDelegate else { return }
+        
+        let managedContext = appDelegate.persistentContainer.viewContext
+        let fetchRequest = NSFetchRequest<NSManagedObject>(entityName: "UserFile")
+        
+        do {
+            userDataArray = try managedContext.fetch(fetchRequest)
+            print ("Bala fetched data success")
+            UIView.transition(with: self.userDataTableView, duration: 0.7, options: .transitionCrossDissolve, animations: {self.userDataTableView.reloadData()}, completion: nil)
+//            userDataTableView.reloadData()
+        } catch let error as NSError {
+            print("Bala Could not fetch. \(error), \(error.userInfo)")
+        }
+    }
+    
+    func deleteExistingStoredData(index: Int) {
+        guard let appDelegate =
+            UIApplication.shared.delegate as? AppDelegate else { return }
+        
+        let managedContext = appDelegate.persistentContainer.viewContext
+        let fetchRequest = NSFetchRequest<NSManagedObject>(entityName: "UserFile")
+        
+        do {
+            userDataArray = try managedContext.fetch(fetchRequest)
+            if  userDataArray.count > index {
+                print ("Bala deletaExistingStoredData success")
+                
+                let storedFile = userDataArray[index]
+                managedContext.delete(storedFile)
+                
+                do {
+                    try managedContext.save()
+                    
+                    // refetch stored data and update the local userDataArray
+                    self.fetchStoredData()
+                } catch let error as NSError {
+                    print("Could not save. \(error), \(error.userInfo)")
+                }
+            }
+        } catch let error as NSError {
+            print("Bala Could not fetch. \(error), \(error.userInfo)")
+        }
+        
     }
 
     override func didReceiveMemoryWarning() {
