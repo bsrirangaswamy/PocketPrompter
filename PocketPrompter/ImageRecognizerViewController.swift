@@ -270,6 +270,12 @@ class ImageRecognizerViewController: UIViewController, UINavigationControllerDel
         
     }
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "playText" {
+            guard let vc = segue.destination as? TextScrollerViewController else { return }
+            vc.textViewString = bodyTextView.text
+        }
+    }
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
