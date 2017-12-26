@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2D2083B81FE016DF00F5DA3E /* TextScrollerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D2083B71FE016DF00F5DA3E /* TextScrollerViewController.swift */; };
 		2D35236E1F543D120057AB6E /* ImageRecognizerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D35236D1F543D120057AB6E /* ImageRecognizerViewController.swift */; };
 		2D35236F1F543D120057AB6E /* ImageRecognizerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D35236D1F543D120057AB6E /* ImageRecognizerViewController.swift */; };
 		2D3523701F543D120057AB6E /* ImageRecognizerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D35236D1F543D120057AB6E /* ImageRecognizerViewController.swift */; };
@@ -52,6 +53,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		2D2083B71FE016DF00F5DA3E /* TextScrollerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextScrollerViewController.swift; sourceTree = "<group>"; };
 		2D35236D1F543D120057AB6E /* ImageRecognizerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageRecognizerViewController.swift; sourceTree = "<group>"; };
 		2D35237A1F62C1850057AB6E /* PromptData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PromptData.swift; sourceTree = "<group>"; };
 		2D4830791F5050FD00B12DE7 /* PocketPrompter.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PocketPrompter.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -142,6 +144,7 @@
 				2D48307C1F5050FD00B12DE7 /* AppDelegate.swift */,
 				2D48307E1F5050FD00B12DE7 /* ViewController.swift */,
 				2D35236D1F543D120057AB6E /* ImageRecognizerViewController.swift */,
+				2D2083B71FE016DF00F5DA3E /* TextScrollerViewController.swift */,
 				2D4830801F5050FD00B12DE7 /* Main.storyboard */,
 				2D9D3F6D1F73E78C005A6810 /* PromptDataTableViewCell.swift */,
 				2D9D3F6E1F73E78C005A6810 /* PromptDataTableViewCell.xib */,
@@ -328,6 +331,7 @@
 			files = (
 				2D48307F1F5050FD00B12DE7 /* ViewController.swift in Sources */,
 				2D9D3F6F1F73E78C005A6810 /* PromptDataTableViewCell.swift in Sources */,
+				2D2083B81FE016DF00F5DA3E /* TextScrollerViewController.swift in Sources */,
 				2D35237B1F62C1850057AB6E /* PromptData.swift in Sources */,
 				2D35236E1F543D120057AB6E /* ImageRecognizerViewController.swift in Sources */,
 				2D8718CA1F505C9F00303221 /* PhantomBridger.m in Sources */,
