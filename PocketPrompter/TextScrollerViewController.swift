@@ -27,7 +27,12 @@ class TextScrollerViewController: UIViewController {
     }
     
     @IBAction func playPauseAction(_ sender: UIButton) {
-        startScrolling()
+        sender.isSelected = !sender.isSelected
+        if sender.isSelected {
+            startScrolling()
+        } else {
+            stopScrolling()
+        }
     }
     
     @IBAction func settingsAction(_ sender: UIButton) {
@@ -36,33 +41,37 @@ class TextScrollerViewController: UIViewController {
         self.scrollTimer = nil
     }
     
-//    func scrollToBotom() {
+//    func scrollToBottom() {
 //        let range = NSMakeRange(playTextView.text.count - 1, 1)
 //        playTextView.scrollRangeToVisible(range)
 //    }
     
-    func pointsPerSecond() -> CGFloat{
-        var speed : CGFloat?
-            speed = CGFloat((10.0) * 5.0)
-        return speed!
+    func scrollToTop() {
+        playTextView.setContentOffset(.zero, animated: true)
     }
-    
-    
-    
+
     func startScrolling() {
+        playAction.setTitle("PAUSE", for: .normal)
+        playAction.setTitleColor(UIColor.white, for: .selected)
         let animationDuration : TimeInterval = TimeInterval((0.6 / self.pointsPerSecond()))
         self.scrollTimer = Timer.scheduledTimer(timeInterval: animationDuration, target: self, selector: #selector(self.updateScroll), userInfo: nil, repeats: true)
     }
     
     func stopScrolling() {
+        playAction.setTitle("PLAY", for: .normal)
+        playAction.setTitleColor(UIColor.white, for: .normal)
         self.scrollTimer?.invalidate()
     }
     
     func updateScroll(){
         
+        // guard for the scroll to ensure the timer is not nil
+        guard let _ = self.scrollTimer else { return }
+        
         // guard to stop scrolling once the after the last word
         guard self.playTextView.contentOffset.y < self.playTextView.contentSize.height else {
             self.stopScrolling()
+            self.scrollToTop()
             return
         }
         
@@ -79,6 +88,12 @@ class TextScrollerViewController: UIViewController {
         print ("Bala content size.width = \(self.playTextView.contentSize)")
         print ("Bala content Offset = \(self.playTextView.contentOffset)")
         print ("Bala content Offset.y = \(self.playTextView.contentOffset.y)")
+    }
+    
+    func pointsPerSecond() -> CGFloat {
+        var speed : CGFloat?
+        speed = CGFloat((10.0) * 5.0)
+        return speed!
     }
 
     override func didReceiveMemoryWarning() {
