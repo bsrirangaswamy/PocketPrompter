@@ -15,15 +15,24 @@ class TextScrollerViewController: UIViewController {
     @IBOutlet weak var settingsAction: UIButton!
     
     var textViewString: String?
-    weak var displayLink: CADisplayLink?
     var scrollTimer: Timer?
+    var textSizeCorrectedValue: Float = 20.0
+    var scrollSpeedCorrectedValue: Float = 10.0
     
     override func viewDidLoad() {
         super.viewDidLoad()
         playTextView.text = textViewString
         
+        if UserDefaults.standard.float(forKey: "textSize") > 0.0 {
+            textSizeCorrectedValue = UserDefaults.standard.float(forKey: "textSize")*20
+        }
+        
+        if UserDefaults.standard.float(forKey: "scrollSpeed") > 0.0 {
+            scrollSpeedCorrectedValue = UserDefaults.standard.float(forKey: "scrollSpeed")*10
+        }
+        
         // initial setup for prompter
-        playTextView.font = UIFont(name: playTextView.font!.fontName, size: 40)
+        playTextView.font = UIFont(name: playTextView.font!.fontName, size: CGFloat(textSizeCorrectedValue))
     }
     
     @IBAction func playPauseAction(_ sender: UIButton) {
@@ -92,7 +101,7 @@ class TextScrollerViewController: UIViewController {
     
     func pointsPerSecond() -> CGFloat {
         var speed : CGFloat?
-        speed = CGFloat((10.0) * 5.0)
+        speed = CGFloat((scrollSpeedCorrectedValue) * 20.0)
         return speed!
     }
 
