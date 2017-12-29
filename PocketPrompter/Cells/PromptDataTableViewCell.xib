@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13196" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13173"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -24,15 +24,15 @@
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </view>
                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="v8s-Qw-cpw">
-                        <rect key="frame" x="8" y="10" width="70" height="70"/>
+                        <rect key="frame" x="16" y="10" width="70" height="70"/>
                         <color key="backgroundColor" red="0.67876025880000002" green="0.04220038207" blue="0.13353238619999999" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="70" id="bQ2-LR-SIM"/>
                             <constraint firstAttribute="width" constant="70" id="yab-su-oak"/>
                         </constraints>
                     </imageView>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="x5H-7R-6lp">
-                        <rect key="frame" x="88" y="18" width="224" height="58.5"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="x5H-7R-6lp">
+                        <rect key="frame" x="106" y="21" width="198" height="53"/>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
@@ -42,7 +42,7 @@
                     <constraint firstItem="x5H-7R-6lp" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" constant="10" id="5ic-Di-rBO"/>
                     <constraint firstItem="v8s-Qw-cpw" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="9eZ-YB-FCr"/>
                     <constraint firstAttribute="leadingMargin" secondItem="v8s-Qw-cpw" secondAttribute="leading" id="OT8-9a-npi"/>
-                    <constraint firstItem="x5H-7R-6lp" firstAttribute="leading" secondItem="v8s-Qw-cpw" secondAttribute="trailing" constant="10" id="XKo-sQ-oir"/>
+                    <constraint firstItem="x5H-7R-6lp" firstAttribute="leading" secondItem="v8s-Qw-cpw" secondAttribute="trailing" constant="20" id="XKo-sQ-oir"/>
                     <constraint firstAttribute="trailingMargin" secondItem="x5H-7R-6lp" secondAttribute="trailing" id="XP4-qm-GP4"/>
                     <constraint firstItem="q8C-t1-tNF" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="Ypd-WY-gFx"/>
                     <constraint firstAttribute="trailing" secondItem="q8C-t1-tNF" secondAttribute="trailing" id="ZlW-r5-QLW"/>

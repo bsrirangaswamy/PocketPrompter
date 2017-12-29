@@ -8,6 +8,12 @@
 
 /* Begin PBXBuildFile section */
 		2D2083B81FE016DF00F5DA3E /* TextScrollerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D2083B71FE016DF00F5DA3E /* TextScrollerViewController.swift */; };
+		2D2083BE1FF3449300F5DA3E /* SettingsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D2083BD1FF3449300F5DA3E /* SettingsTableViewController.swift */; };
+		2D2083BF1FF3449300F5DA3E /* SettingsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D2083BD1FF3449300F5DA3E /* SettingsTableViewController.swift */; };
+		2D2083C01FF3449300F5DA3E /* SettingsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D2083BD1FF3449300F5DA3E /* SettingsTableViewController.swift */; };
+		2D2083CA1FF5A8D200F5DA3E /* SettingsDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D2083C91FF5A8D200F5DA3E /* SettingsDetailViewController.swift */; };
+		2D2083CB1FF5A8D200F5DA3E /* SettingsDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D2083C91FF5A8D200F5DA3E /* SettingsDetailViewController.swift */; };
+		2D2083CC1FF5A8D200F5DA3E /* SettingsDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D2083C91FF5A8D200F5DA3E /* SettingsDetailViewController.swift */; };
 		2D35236E1F543D120057AB6E /* ImageRecognizerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D35236D1F543D120057AB6E /* ImageRecognizerViewController.swift */; };
 		2D35236F1F543D120057AB6E /* ImageRecognizerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D35236D1F543D120057AB6E /* ImageRecognizerViewController.swift */; };
 		2D3523701F543D120057AB6E /* ImageRecognizerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D35236D1F543D120057AB6E /* ImageRecognizerViewController.swift */; };
@@ -54,6 +60,8 @@
 
 /* Begin PBXFileReference section */
 		2D2083B71FE016DF00F5DA3E /* TextScrollerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextScrollerViewController.swift; sourceTree = "<group>"; };
+		2D2083BD1FF3449300F5DA3E /* SettingsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsTableViewController.swift; sourceTree = "<group>"; };
+		2D2083C91FF5A8D200F5DA3E /* SettingsDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsDetailViewController.swift; sourceTree = "<group>"; };
 		2D35236D1F543D120057AB6E /* ImageRecognizerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageRecognizerViewController.swift; sourceTree = "<group>"; };
 		2D35237A1F62C1850057AB6E /* PromptData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PromptData.swift; sourceTree = "<group>"; };
 		2D4830791F5050FD00B12DE7 /* PocketPrompter.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PocketPrompter.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -140,18 +148,20 @@
 		2D48307B1F5050FD00B12DE7 /* PocketPrompter */ = {
 			isa = PBXGroup;
 			children = (
-				2D3523791F62C1420057AB6E /* Model */,
 				2D48307C1F5050FD00B12DE7 /* AppDelegate.swift */,
+				2D4830801F5050FD00B12DE7 /* Main.storyboard */,
 				2D48307E1F5050FD00B12DE7 /* ViewController.swift */,
 				2D35236D1F543D120057AB6E /* ImageRecognizerViewController.swift */,
+				2D2083BD1FF3449300F5DA3E /* SettingsTableViewController.swift */,
 				2D2083B71FE016DF00F5DA3E /* TextScrollerViewController.swift */,
-				2D4830801F5050FD00B12DE7 /* Main.storyboard */,
-				2D9D3F6D1F73E78C005A6810 /* PromptDataTableViewCell.swift */,
+				2D2083C91FF5A8D200F5DA3E /* SettingsDetailViewController.swift */,
 				2D9D3F6E1F73E78C005A6810 /* PromptDataTableViewCell.xib */,
+				2D9D3F6D1F73E78C005A6810 /* PromptDataTableViewCell.swift */,
 				2D4830861F5050FD00B12DE7 /* Assets.xcassets */,
 				2D4830881F5050FD00B12DE7 /* LaunchScreen.storyboard */,
 				2D48308B1F5050FD00B12DE7 /* Info.plist */,
 				2D4830831F5050FD00B12DE7 /* PocketPrompter.xcdatamodeld */,
+				2D3523791F62C1420057AB6E /* Model */,
 				2D5094B51F505A7100FFBFB4 /* tessdata */,
 				2D5094B31F505A6800FFBFB4 /* TesseractOCR.framework */,
 				2D8718C91F505C9F00303221 /* PhantomBridger.m */,
@@ -329,6 +339,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2D2083CA1FF5A8D200F5DA3E /* SettingsDetailViewController.swift in Sources */,
 				2D48307F1F5050FD00B12DE7 /* ViewController.swift in Sources */,
 				2D9D3F6F1F73E78C005A6810 /* PromptDataTableViewCell.swift in Sources */,
 				2D2083B81FE016DF00F5DA3E /* TextScrollerViewController.swift in Sources */,
@@ -337,6 +348,7 @@
 				2D8718CA1F505C9F00303221 /* PhantomBridger.m in Sources */,
 				2D4830851F5050FD00B12DE7 /* PocketPrompter.xcdatamodeld in Sources */,
 				2D48307D1F5050FD00B12DE7 /* AppDelegate.swift in Sources */,
+				2D2083BE1FF3449300F5DA3E /* SettingsTableViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -345,8 +357,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				2D35236F1F543D120057AB6E /* ImageRecognizerViewController.swift in Sources */,
+				2D2083BF1FF3449300F5DA3E /* SettingsTableViewController.swift in Sources */,
 				2D35237C1F62C1850057AB6E /* PromptData.swift in Sources */,
 				2D4830951F5050FE00B12DE7 /* PocketPrompterTests.swift in Sources */,
+				2D2083CB1FF5A8D200F5DA3E /* SettingsDetailViewController.swift in Sources */,
 				2D9D3F701F73E78C005A6810 /* PromptDataTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -356,8 +370,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				2D3523701F543D120057AB6E /* ImageRecognizerViewController.swift in Sources */,
+				2D2083C01FF3449300F5DA3E /* SettingsTableViewController.swift in Sources */,
 				2D35237D1F62C1850057AB6E /* PromptData.swift in Sources */,
 				2D4830A01F5050FE00B12DE7 /* PocketPrompterUITests.swift in Sources */,
+				2D2083CC1FF5A8D200F5DA3E /* SettingsDetailViewController.swift in Sources */,
 				2D9D3F711F73E78C005A6810 /* PromptDataTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
