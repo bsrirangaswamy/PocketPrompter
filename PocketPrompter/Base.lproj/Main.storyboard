@@ -156,17 +156,17 @@
                                     <action selector="sliderValueChaged:" destination="mEQ-TB-lv6" eventType="valueChanged" id="xxp-Dg-fmu"/>
                                 </connections>
                             </slider>
-                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="9m8-E6-Eve">
-                                <rect key="frame" x="37.5" y="385" width="300" height="30"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="9m8-E6-Eve">
+                                <rect key="frame" x="146.5" y="385" width="82" height="30"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="VALUE :" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="f2w-bp-Ves">
-                                        <rect key="frame" x="0.0" y="0.0" width="200.5" height="30"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="61.5" height="30"/>
                                         <fontDescription key="fontDescription" type="italicSystem" pointSize="17"/>
                                         <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3Qs-w9-paD">
-                                        <rect key="frame" x="220.5" y="0.0" width="79.5" height="30"/>
+                                        <rect key="frame" x="71.5" y="0.0" width="10.5" height="30"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
@@ -176,22 +176,37 @@
                                     <constraint firstAttribute="height" constant="30" id="dBf-9e-Tuu"/>
                                 </constraints>
                             </stackView>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="iI6-Qg-Mip">
+                                <rect key="frame" x="0.0" y="64" width="375" height="535"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <sections/>
+                                <connections>
+                                    <outlet property="dataSource" destination="mEQ-TB-lv6" id="Aqx-hC-b3s"/>
+                                    <outlet property="delegate" destination="mEQ-TB-lv6" id="Br4-TY-eVu"/>
+                                </connections>
+                            </tableView>
                         </subviews>
                         <color key="backgroundColor" red="0.3907738785" green="0.67876025880000002" blue="0.58943388839999999" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
+                            <constraint firstItem="5xO-OJ-5y8" firstAttribute="top" secondItem="iI6-Qg-Mip" secondAttribute="bottom" constant="8" id="2Oa-GY-otT"/>
                             <constraint firstItem="Dc6-bW-SEJ" firstAttribute="top" secondItem="5xO-OJ-5y8" secondAttribute="bottom" constant="10" id="4Da-HR-nIE"/>
                             <constraint firstItem="9m8-E6-Eve" firstAttribute="top" secondItem="fxJ-40-0c9" secondAttribute="bottom" constant="-15" id="AAR-S0-bBW"/>
+                            <constraint firstAttribute="trailing" secondItem="iI6-Qg-Mip" secondAttribute="trailing" id="Cdq-cT-xon"/>
                             <constraint firstItem="9m8-E6-Eve" firstAttribute="centerX" secondItem="lC9-1g-4CR" secondAttribute="centerX" id="SX8-pM-3yP"/>
                             <constraint firstItem="fxJ-40-0c9" firstAttribute="centerX" secondItem="lC9-1g-4CR" secondAttribute="centerX" id="VM0-rC-N4K"/>
+                            <constraint firstItem="iI6-Qg-Mip" firstAttribute="leading" secondItem="lC9-1g-4CR" secondAttribute="leading" id="YHt-bh-IMK"/>
+                            <constraint firstItem="iI6-Qg-Mip" firstAttribute="top" secondItem="L8B-lo-oCY" secondAttribute="bottom" id="YjN-Hm-fmV"/>
                             <constraint firstItem="5xO-OJ-5y8" firstAttribute="trailing" secondItem="lC9-1g-4CR" secondAttribute="trailingMargin" id="Zfn-cZ-vC8"/>
                             <constraint firstItem="5xO-OJ-5y8" firstAttribute="leading" secondItem="lC9-1g-4CR" secondAttribute="leadingMargin" id="pXe-zI-YsD"/>
                             <constraint firstItem="fxJ-40-0c9" firstAttribute="height" secondItem="lC9-1g-4CR" secondAttribute="height" multiplier="0.2" id="qYP-DZ-PXW"/>
                             <constraint firstItem="fxJ-40-0c9" firstAttribute="centerY" secondItem="lC9-1g-4CR" secondAttribute="centerY" id="rkA-Ak-8yu"/>
                             <constraint firstItem="fxJ-40-0c9" firstAttribute="width" secondItem="lC9-1g-4CR" secondAttribute="width" multiplier="0.8" id="sJh-gQ-jgs"/>
-                            <constraint firstItem="9m8-E6-Eve" firstAttribute="width" secondItem="lC9-1g-4CR" secondAttribute="width" multiplier="0.8" id="sd3-HJ-b6l"/>
+                            <constraint firstItem="9m8-E6-Eve" firstAttribute="width" relation="lessThanOrEqual" secondItem="lC9-1g-4CR" secondAttribute="width" multiplier="0.8" id="sd3-HJ-b6l"/>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="colorsTableView" destination="iI6-Qg-Mip" id="1j5-g4-JP0"/>
+                        <outlet property="sliderStackView" destination="9m8-E6-Eve" id="iHJ-As-M1C"/>
                         <outlet property="sliderTitleLabel" destination="f2w-bp-Ves" id="brw-EO-dhb"/>
                         <outlet property="sliderValueLabel" destination="3Qs-w9-paD" id="BaN-sH-lax"/>
                         <outlet property="speedSlider" destination="fxJ-40-0c9" id="XWe-Nf-fJV"/>

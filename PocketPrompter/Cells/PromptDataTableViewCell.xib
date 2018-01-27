@@ -6,7 +6,6 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
-        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
@@ -21,37 +20,45 @@
                 <subviews>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="q8C-t1-tNF">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="1"/>
-                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                    </view>
-                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="v8s-Qw-cpw">
-                        <rect key="frame" x="16" y="10" width="70" height="70"/>
-                        <color key="backgroundColor" red="0.67876025880000002" green="0.04220038207" blue="0.13353238619999999" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="backgroundColor" white="0.67447916666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstAttribute="height" constant="70" id="bQ2-LR-SIM"/>
-                            <constraint firstAttribute="width" constant="70" id="yab-su-oak"/>
+                            <constraint firstAttribute="height" constant="1" id="ewj-Fx-rf1"/>
                         </constraints>
-                    </imageView>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="x5H-7R-6lp">
-                        <rect key="frame" x="106" y="21" width="198" height="53"/>
-                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                        <nil key="textColor"/>
-                        <nil key="highlightedColor"/>
-                    </label>
+                    </view>
+                    <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="mFF-6i-mYS">
+                        <rect key="frame" x="16" y="10" width="102" height="70"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="v8s-Qw-cpw">
+                                <rect key="frame" x="0.0" y="10" width="50" height="50"/>
+                                <color key="backgroundColor" red="0.67876025880000002" green="0.04220038207" blue="0.13353238619999999" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="bQ2-LR-SIM"/>
+                                    <constraint firstAttribute="width" constant="50" id="yab-su-oak"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="x5H-7R-6lp">
+                                <rect key="frame" x="60" y="25" width="42" height="20.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <constraints>
+                            <constraint firstAttribute="width" relation="lessThanOrEqual" constant="300" id="0bs-bp-JDa"/>
+                        </constraints>
+                    </stackView>
                 </subviews>
                 <constraints>
-                    <constraint firstItem="x5H-7R-6lp" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" constant="10" id="5ic-Di-rBO"/>
-                    <constraint firstItem="v8s-Qw-cpw" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="9eZ-YB-FCr"/>
-                    <constraint firstAttribute="leadingMargin" secondItem="v8s-Qw-cpw" secondAttribute="leading" id="OT8-9a-npi"/>
-                    <constraint firstItem="x5H-7R-6lp" firstAttribute="leading" secondItem="v8s-Qw-cpw" secondAttribute="trailing" constant="20" id="XKo-sQ-oir"/>
-                    <constraint firstAttribute="trailingMargin" secondItem="x5H-7R-6lp" secondAttribute="trailing" id="XP4-qm-GP4"/>
+                    <constraint firstItem="mFF-6i-mYS" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="16" id="4rv-Yj-HHb"/>
                     <constraint firstItem="q8C-t1-tNF" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="Ypd-WY-gFx"/>
                     <constraint firstAttribute="trailing" secondItem="q8C-t1-tNF" secondAttribute="trailing" id="ZlW-r5-QLW"/>
-                    <constraint firstItem="v8s-Qw-cpw" firstAttribute="top" secondItem="q8C-t1-tNF" secondAttribute="bottom" constant="9" id="epd-NA-j0s"/>
+                    <constraint firstAttribute="bottom" secondItem="mFF-6i-mYS" secondAttribute="bottom" constant="9" id="jNi-ri-kBJ"/>
                     <constraint firstItem="q8C-t1-tNF" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="kL7-a5-gPN"/>
-                    <constraint firstAttribute="bottomMargin" secondItem="x5H-7R-6lp" secondAttribute="bottom" constant="5" id="o6M-yZ-Ogn"/>
+                    <constraint firstItem="mFF-6i-mYS" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="10" id="tsL-Ym-ZXK"/>
                 </constraints>
             </tableViewCellContentView>
             <connections>
+                <outlet property="separatorLineView" destination="q8C-t1-tNF" id="SF7-gU-3Na"/>
                 <outlet property="snapShotImageView" destination="v8s-Qw-cpw" id="4uN-vd-dlO"/>
                 <outlet property="textTitleLabel" destination="x5H-7R-6lp" id="X9f-Zx-XS3"/>
             </connections>
