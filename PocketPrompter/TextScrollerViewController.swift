@@ -16,8 +16,14 @@ class TextScrollerViewController: UIViewController {
     
     var textViewString: String?
     var scrollTimer: Timer?
-    var textSizeCorrectedValue: Float = 20.0
-    var scrollSpeedCorrectedValue: Float = 10.0
+   
+    private var textSizeCorrectedValue: Float = 20.0
+    private var scrollSpeedCorrectedValue: Float = 10.0
+    private var textColorTypeValue = UIColor.black
+    private var backgroundColorTypeValue = UIColor.white
+    
+    var colorsTitleArray = ["Cave Black", "Mercury Grey", "Royal Blue", "Fiery Red", "Sunny Yellow"]
+    var colorsValueArray = [UIColor.black, UIColor.gray, UIColor.blue, UIColor.red, UIColor.yellow]
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -31,8 +37,20 @@ class TextScrollerViewController: UIViewController {
             scrollSpeedCorrectedValue = UserDefaults.standard.float(forKey: "scrollSpeed")*10
         }
         
+        if let textColorString = UserDefaults.standard.string(forKey: "textColorType") {
+           let index = colorsTitleArray.index(of: textColorString) ?? 0
+            textColorTypeValue = colorsValueArray[index]
+        }
+        
+        if let backgroundColorString = UserDefaults.standard.string(forKey: "backgroundColorType") {
+            let index = colorsTitleArray.index(of: backgroundColorString) ?? 1
+            backgroundColorTypeValue = colorsValueArray[index]
+        }
+        
         // initial setup for prompter
         playTextView.font = UIFont(name: playTextView.font!.fontName, size: CGFloat(textSizeCorrectedValue))
+        playTextView.textColor = textColorTypeValue
+        playTextView.backgroundColor = backgroundColorTypeValue
     }
     
     @IBAction func playPauseAction(_ sender: UIButton) {

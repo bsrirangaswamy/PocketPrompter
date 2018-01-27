@@ -12,6 +12,7 @@ class PromptDataTableViewCell: UITableViewCell {
 
     @IBOutlet weak var snapShotImageView: UIImageView!
     @IBOutlet weak var textTitleLabel: UILabel!
+    @IBOutlet weak var separatorLineView: UIView!
     
     
     override func awakeFromNib() {
