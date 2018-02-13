@@ -28,9 +28,8 @@
                     <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="mFF-6i-mYS">
                         <rect key="frame" x="16" y="10" width="102" height="70"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="v8s-Qw-cpw">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="v8s-Qw-cpw">
                                 <rect key="frame" x="0.0" y="10" width="50" height="50"/>
-                                <color key="backgroundColor" red="0.67876025880000002" green="0.04220038207" blue="0.13353238619999999" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="bQ2-LR-SIM"/>
                                     <constraint firstAttribute="width" constant="50" id="yab-su-oak"/>

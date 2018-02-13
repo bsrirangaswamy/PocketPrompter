@@ -17,7 +17,6 @@ class ImageRecognizerViewController: UIViewController, UINavigationControllerDel
     @IBOutlet weak var activityIndicatorView: UIActivityIndicatorView!
     @IBOutlet weak var bodyTextviewToSaveButtonTConstraint: NSLayoutConstraint!
     
-    var editModeView: UIView?
     var userData: [NSManagedObject] = []
     var savedTitle: String?
     var savedBodyText: String?
@@ -34,20 +33,9 @@ class ImageRecognizerViewController: UIViewController, UINavigationControllerDel
         // assign delegate to the view controller
         bodyTextView.delegate = self
         
-        let screenSize: CGRect = UIScreen.main.bounds
-        self.editModeView = UIView(frame: CGRect(x: 0, y: 0, width: screenSize.width, height: screenSize.height))
-        self.editModeView?.backgroundColor = UIColor.clear
-        self.view.addSubview(editModeView!)
-        
-        self.editModeView?.isHidden = true
-        
-        let tap = UITapGestureRecognizer(target: self, action:#selector(dismisskeyboard(sender:)))
-        self.editModeView?.addGestureRecognizer(tap)
-        self.editModeView?.isUserInteractionEnabled = true
-        
         // add observers for keyboard
         NotificationCenter.default.addObserver(self, selector: #selector(self.keyboardWillShow), name: NSNotification.Name.UIKeyboardWillShow, object: nil)
-        NotificationCenter.default.addObserver(self, selector: #selector(self.keyboardWillHide(notification:)), name: Notification.Name.UIKeyboardWillHide, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(self.keyboardWillHide), name: Notification.Name.UIKeyboardWillHide, object: nil)
         
         // if data available then, present data
         if let savedTitle = savedTitle, let savedBodyText = savedBodyText {
@@ -177,19 +165,27 @@ class ImageRecognizerViewController: UIViewController, UINavigationControllerDel
     
     // Keyboard notification methods
     func keyboardWillShow(notification: NSNotification) {
-        if let keyboardSize = (notification.userInfo?[UIKeyboardFrameBeginUserInfoKey] as? NSValue)?.cgRectValue {
-            if self.bodyTextviewToSaveButtonTConstraint.constant == 10 {
-                self.bodyTextviewToSaveButtonTConstraint.constant += (keyboardSize.height - 50)
-            }
+        if let keyboardSize = (notification.userInfo?[UIKeyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue {
+            print ("Bala keyboard height = \(keyboardSize.height)")
+            let keyboardHeight = keyboardSize.height
+            self.updateBodyTextViewHeight(keyboardHeight: keyboardHeight)
         }
-        self.editModeView?.isHidden = false
     }
     
     func keyboardWillHide(notification: NSNotification) {
         if self.bodyTextviewToSaveButtonTConstraint.constant != 10{
             self.bodyTextviewToSaveButtonTConstraint.constant = 10.0
         }
-        self.editModeView?.isHidden = true
+    }
+    
+    func updateBodyTextViewHeight(keyboardHeight: CGFloat) {
+        if UIDevice.current.orientation.isPortrait {
+            print("Bala Portrait")
+            self.bodyTextviewToSaveButtonTConstraint.constant = keyboardHeight/1.35
+        } else {
+            print("Bala Landscape")
+            self.bodyTextviewToSaveButtonTConstraint.constant = keyboardHeight/1.55
+        }
     }
 
     @IBAction func saveButtonPressed(_ sender: UIButton) {
@@ -200,7 +196,6 @@ class ImageRecognizerViewController: UIViewController, UINavigationControllerDel
             // new data to be entered into core data
             createNewData()
         }
-        
         self.navigationController!.dismiss(animated: true, completion: nil)
     }
     
@@ -230,6 +225,7 @@ class ImageRecognizerViewController: UIViewController, UINavigationControllerDel
         // 3
         saveFile.setValue(titleTextField.text, forKeyPath: SavedUserData.title.rawValue)
         saveFile.setValue(bodyTextView.text, forKeyPath: SavedUserData.bodyText.rawValue)
+        saveFile.setValue(takeSnapshot(), forKey: SavedUserData.bodyImage.rawValue)
         
         // 4
         do {
@@ -256,6 +252,7 @@ class ImageRecognizerViewController: UIViewController, UINavigationControllerDel
                 
                 storedFile.setValue(titleTextField.text, forKeyPath: SavedUserData.title.rawValue)
                 storedFile.setValue(bodyTextView.text, forKeyPath: SavedUserData.bodyText.rawValue)
+                storedFile.setValue(takeSnapshot(), forKey: SavedUserData.bodyImage.rawValue)
                 
                 do {
                     try managedContext.save()
@@ -275,6 +272,15 @@ class ImageRecognizerViewController: UIViewController, UINavigationControllerDel
             guard let vc = segue.destination as? TextScrollerViewController else { return }
             vc.textViewString = bodyTextView.text
         }
+    }
+    
+    func takeSnapshot() -> Data {
+        UIGraphicsBeginImageContext(self.bodyTextView.frame.size)
+        view.layer.render(in: UIGraphicsGetCurrentContext()!)
+        let image = UIGraphicsGetImageFromCurrentImageContext()
+        UIGraphicsEndImageContext()
+        let imageData = UIImagePNGRepresentation(image!)
+        return imageData!
     }
     
     override func didReceiveMemoryWarning() {
@@ -318,4 +324,14 @@ extension ImageRecognizerViewController: UITextViewDelegate {
     func textViewDidEndEditing(_ textView: UITextView) {
         print ("Bala textViewDidEndEditing")
     }
+    
+//    func textView(_ textView: UITextView, shouldChangeTextIn range: NSRange, replacementText text: String) -> Bool {
+//        print ("Bala text = \(text)")
+//        if text == "\n" {
+//            view.endEditing(true)
+//            return false
+//        } else {
+//            return true
+//        }
+//    }
 }
