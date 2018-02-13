@@ -99,7 +99,7 @@ class SettingsDetailViewController: UIViewController, UITableViewDelegate, UITab
     }
     
     func selectSpecifiedTableViewCell(withString: String?) {
-        var row = 0
+        var row = index-1
         
         if let stringValue = withString {
             row = colorsTitleArray.index(of: stringValue) ?? index-1

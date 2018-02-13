@@ -40,11 +40,15 @@ class TextScrollerViewController: UIViewController {
         if let textColorString = UserDefaults.standard.string(forKey: "textColorType") {
            let index = colorsTitleArray.index(of: textColorString) ?? 0
             textColorTypeValue = colorsValueArray[index]
+        } else {
+            textColorTypeValue = UIColor.black
         }
         
         if let backgroundColorString = UserDefaults.standard.string(forKey: "backgroundColorType") {
             let index = colorsTitleArray.index(of: backgroundColorString) ?? 1
             backgroundColorTypeValue = colorsValueArray[index]
+        } else {
+            backgroundColorTypeValue = UIColor.gray
         }
         
         // initial setup for prompter

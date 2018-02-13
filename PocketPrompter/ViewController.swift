@@ -49,9 +49,18 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "promptDataTableViewCell") as! PromptDataTableViewCell
         
-        if let data = userDataArray[indexPath.row].value(forKeyPath: SavedUserData.title.rawValue) {
-            print ("Bala saved User Data in table view = \(data)")
-            cell.textTitleLabel.text = data as? String
+        if let titleData = userDataArray[indexPath.row].value(forKeyPath: SavedUserData.title.rawValue) {
+            print ("Bala saved User Data title in table view = \(titleData)")
+            cell.textTitleLabel.text = titleData as? String
+        }
+        
+        if let storedImageData = userDataArray[indexPath.row].value(forKeyPath: SavedUserData.bodyImage.rawValue) {
+            print ("Bala saved User Data image Any in table view = \(storedImageData)")
+            let imageData = storedImageData as? Data
+            if let imageDataValue = imageData {
+                print ("Bala saved User Data image data in table view = \(imageDataValue)")
+                cell.snapShotImageView.image = UIImage(data: imageDataValue)
+            }
         }
         
         return cell
