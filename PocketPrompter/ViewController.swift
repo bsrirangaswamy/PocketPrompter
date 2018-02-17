@@ -13,22 +13,24 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
 
     // MARK : - IBOutlets
     @IBOutlet weak var userDataTableView: UITableView!
+    @IBOutlet weak var pocketPrompterPlaceHolderImageView: UIImageView!
     
     var userDataArray: [NSManagedObject] = []
     var currentSelectedIndex = 0
-    
-
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         self.userDataTableView!.register(UINib(nibName: "PromptDataTableViewCell", bundle: nil), forCellReuseIdentifier: "promptDataTableViewCell")
+        self.navigationController?.navigationBar.tintColor = UIColor.whiteAccentColor()
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
         self.fetchStoredData()
+        
+        showHidePlaceholderWaterMark()
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -50,15 +52,15 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         let cell = tableView.dequeueReusableCell(withIdentifier: "promptDataTableViewCell") as! PromptDataTableViewCell
         
         if let titleData = userDataArray[indexPath.row].value(forKeyPath: SavedUserData.title.rawValue) {
-            print ("Bala saved User Data title in table view = \(titleData)")
+            print ("Saved User Data title in table view = \(titleData)")
             cell.textTitleLabel.text = titleData as? String
         }
         
         if let storedImageData = userDataArray[indexPath.row].value(forKeyPath: SavedUserData.bodyImage.rawValue) {
-            print ("Bala saved User Data image Any in table view = \(storedImageData)")
+            print ("Saved User Data image Any in table view = \(storedImageData)")
             let imageData = storedImageData as? Data
             if let imageDataValue = imageData {
-                print ("Bala saved User Data image data in table view = \(imageDataValue)")
+                print ("saved User Data image data in table view = \(imageDataValue)")
                 cell.snapShotImageView.image = UIImage(data: imageDataValue)
             }
         }
@@ -120,11 +122,15 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         
         do {
             userDataArray = try managedContext.fetch(fetchRequest)
-            print ("Bala fetched data success")
-            UIView.transition(with: self.userDataTableView, duration: 0.7, options: .transitionCrossDissolve, animations: {self.userDataTableView.reloadData()}, completion: nil)
+            print ("fetched data success")
+            UIView.transition(with: self.userDataTableView, duration: 0.7, options: .transitionCrossDissolve, animations: {
+                self.userDataTableView.reloadData()
+            }, completion: { (value) in
+                self.showHidePlaceholderWaterMark()
+            })
 //            userDataTableView.reloadData()
         } catch let error as NSError {
-            print("Bala Could not fetch. \(error), \(error.userInfo)")
+            print("Could not fetch. \(error), \(error.userInfo)")
         }
     }
     
@@ -138,7 +144,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         do {
             userDataArray = try managedContext.fetch(fetchRequest)
             if  userDataArray.count > index {
-                print ("Bala deletaExistingStoredData success")
+                print ("deletaExistingStoredData success")
                 
                 let storedFile = userDataArray[index]
                 managedContext.delete(storedFile)
@@ -153,9 +159,16 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
                 }
             }
         } catch let error as NSError {
-            print("Bala Could not fetch. \(error), \(error.userInfo)")
+            print("Could not fetch. \(error), \(error.userInfo)")
         }
-        
+    }
+    
+    func showHidePlaceholderWaterMark() {
+        if userDataArray.count > 0 {
+            pocketPrompterPlaceHolderImageView.isHidden = true
+        } else {
+            pocketPrompterPlaceHolderImageView.isHidden = false
+        }
     }
 
     override func didReceiveMemoryWarning() {
