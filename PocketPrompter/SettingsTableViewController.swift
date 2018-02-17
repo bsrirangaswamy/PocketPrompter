@@ -26,7 +26,7 @@ class SettingsTableViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        print ("Bala selected row at index path = \(indexPath)")
+        print ("selected row at index path = \(indexPath)")
     }
     
     // MARK :- Segue

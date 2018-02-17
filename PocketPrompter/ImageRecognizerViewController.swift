@@ -14,6 +14,7 @@ class ImageRecognizerViewController: UIViewController, UINavigationControllerDel
     // MARK : - IBOutlets
     @IBOutlet weak var titleTextField: UITextField!
     @IBOutlet weak var bodyTextView: UITextView!
+    @IBOutlet weak var placeHolderBodyTextLabel: UILabel!
     @IBOutlet weak var activityIndicatorView: UIActivityIndicatorView!
     @IBOutlet weak var bodyTextviewToSaveButtonTConstraint: NSLayoutConstraint!
     
@@ -41,9 +42,13 @@ class ImageRecognizerViewController: UIViewController, UINavigationControllerDel
         if let savedTitle = savedTitle, let savedBodyText = savedBodyText {
             titleTextField.text = savedTitle
             bodyTextView.text = savedBodyText
+            // hide placeHolder body text
+            placeHolderBodyTextLabel.isHidden = true
         } else {
             // Load image picker
             self.imagePickerAction()
+            // unhide placeHolder body text
+            placeHolderBodyTextLabel.isHidden = false
         }
     }
     
@@ -103,6 +108,9 @@ class ImageRecognizerViewController: UIViewController, UINavigationControllerDel
         let selectedPhoto = info[UIImagePickerControllerOriginalImage] as! UIImage
         let scaledImage = scaleImage(selectedPhoto, maxDimension: 640)
         
+        // hide placeHolder body text
+        placeHolderBodyTextLabel.isHidden = true
+        
         // start animating activity Indicator
         activityIndicatorView.startAnimating()
         
@@ -159,14 +167,13 @@ class ImageRecognizerViewController: UIViewController, UINavigationControllerDel
     
     // dismiss keyboard for text view and text field
     func dismisskeyboard(sender: UITapGestureRecognizer? = nil) {
-        print("Bala dismiss keyboard")
         self.view.endEditing(true)
     }
     
     // Keyboard notification methods
     func keyboardWillShow(notification: NSNotification) {
         if let keyboardSize = (notification.userInfo?[UIKeyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue {
-            print ("Bala keyboard height = \(keyboardSize.height)")
+            print ("keyboard height = \(keyboardSize.height)")
             let keyboardHeight = keyboardSize.height
             self.updateBodyTextViewHeight(keyboardHeight: keyboardHeight)
         }
@@ -180,15 +187,23 @@ class ImageRecognizerViewController: UIViewController, UINavigationControllerDel
     
     func updateBodyTextViewHeight(keyboardHeight: CGFloat) {
         if UIDevice.current.orientation.isPortrait {
-            print("Bala Portrait")
             self.bodyTextviewToSaveButtonTConstraint.constant = keyboardHeight/1.35
         } else {
-            print("Bala Landscape")
             self.bodyTextviewToSaveButtonTConstraint.constant = keyboardHeight/1.55
         }
     }
 
     @IBAction func saveButtonPressed(_ sender: UIButton) {
+        guard let textFieldText = titleTextField.text, !textFieldText.isNilOrEmpty() else {
+            showAlert(withTitle: "Please Enter a Title")
+            return
+        }
+        
+        guard let textViewText = bodyTextView.text, !textViewText.isNilOrEmpty() else {
+            showAlert(withTitle: "Please Enter Text")
+            return
+        }
+        
         if let _ = objectIndex {
             // data already exists in core data
             updateExistingStoredData()
@@ -246,7 +261,7 @@ class ImageRecognizerViewController: UIViewController, UINavigationControllerDel
         do {
             userData = try managedContext.fetch(fetchRequest)
             if let index = objectIndex, userData.count > index {
-                print ("Bala updateExistingStoredData success")
+                print ("updateExistingStoredData success")
                 
                 let storedFile = userData[index]
                 
@@ -262,12 +277,16 @@ class ImageRecognizerViewController: UIViewController, UINavigationControllerDel
                 
             }
         } catch let error as NSError {
-            print("Bala Could not fetch. \(error), \(error.userInfo)")
+            print("Could not fetch. \(error), \(error.userInfo)")
         }
         
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        guard let textViewText = bodyTextView.text, !textViewText.isNilOrEmpty() else {
+            showAlert(withTitle: "Please Enter Text")
+            return
+        }
         if segue.identifier == "playText" {
             guard let vc = segue.destination as? TextScrollerViewController else { return }
             vc.textViewString = bodyTextView.text
@@ -281,6 +300,12 @@ class ImageRecognizerViewController: UIViewController, UINavigationControllerDel
         UIGraphicsEndImageContext()
         let imageData = UIImagePNGRepresentation(image!)
         return imageData!
+    }
+    
+    func showAlert (withTitle: String) {
+        let alert = UIAlertController(title: withTitle, message: "", preferredStyle: UIAlertControllerStyle.alert)
+        alert.addAction(UIAlertAction(title: "Ok", style: UIAlertActionStyle.default, handler: nil))
+        self.present(alert, animated: true, completion: nil)
     }
     
     override func didReceiveMemoryWarning() {
@@ -305,33 +330,40 @@ extension ImageRecognizerViewController: UITextViewDelegate {
     // MARK :- UITextViewDelegate methods
     
     func textViewShouldBeginEditing(_ textView: UITextView) -> Bool {
-        print ("Bala textViewShouldBeginEditing")
+        print ("textViewShouldBeginEditing")
         return true
     }
     
     func textViewDidChangeSelection(_ textView: UITextView) {
-        print ("Bala textViewDidChangeSelection")
+        print ("textViewDidChangeSelection")
     }
     
     func textViewDidChange(_ textView: UITextView) {
-        print ("Bala textViewDidChange")
+        print ("textViewDidChange")
+        if textView.text.count > 0 {
+            // hide placeHolder body text
+            placeHolderBodyTextLabel.isHidden = true
+        } else {
+            // hide placeHolder body text
+            placeHolderBodyTextLabel.isHidden = false
+        }
     }
     
     func textViewDidBeginEditing(_ textView: UITextView) {
-        print ("Bala textViewDidBeginEditing")
+        print ("textViewDidBeginEditing")
     }
     
     func textViewDidEndEditing(_ textView: UITextView) {
-        print ("Bala textViewDidEndEditing")
+        print ("textViewDidEndEditing")
     }
-    
-//    func textView(_ textView: UITextView, shouldChangeTextIn range: NSRange, replacementText text: String) -> Bool {
-//        print ("Bala text = \(text)")
-//        if text == "\n" {
-//            view.endEditing(true)
-//            return false
-//        } else {
-//            return true
-//        }
-//    }
+}
+
+extension String {
+    func isNilOrEmpty() -> Bool {
+        var tempBool = true
+        if self.count > 0 {
+            tempBool = false
+        }
+        return tempBool
+    }
 }

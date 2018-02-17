@@ -22,8 +22,8 @@ class TextScrollerViewController: UIViewController {
     private var textColorTypeValue = UIColor.black
     private var backgroundColorTypeValue = UIColor.white
     
-    var colorsTitleArray = ["Cave Black", "Mercury Grey", "Royal Blue", "Fiery Red", "Sunny Yellow"]
-    var colorsValueArray = [UIColor.black, UIColor.gray, UIColor.blue, UIColor.red, UIColor.yellow]
+    var colorsTitleArray = ["Cave Black", "Mercury Grey", "Chalk White", "Royal Blue", "Light Sapphire", "Fiery Red", "Sunset Orange", "Sunflower Yellow"]
+    var colorsValueArray = [UIColor.black, UIColor.gray, UIColor.whiteAccentColor(), UIColor.blue,UIColor.blueAccentColor(), UIColor.red, UIColor.orangeAccentColor(), UIColor.yellow]
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -45,16 +45,17 @@ class TextScrollerViewController: UIViewController {
         }
         
         if let backgroundColorString = UserDefaults.standard.string(forKey: "backgroundColorType") {
-            let index = colorsTitleArray.index(of: backgroundColorString) ?? 1
+            let index = colorsTitleArray.index(of: backgroundColorString) ?? 2
             backgroundColorTypeValue = colorsValueArray[index]
         } else {
-            backgroundColorTypeValue = UIColor.gray
+            backgroundColorTypeValue = UIColor.whiteAccentColor()
         }
         
         // initial setup for prompter
         playTextView.font = UIFont(name: playTextView.font!.fontName, size: CGFloat(textSizeCorrectedValue))
         playTextView.textColor = textColorTypeValue
         playTextView.backgroundColor = backgroundColorTypeValue
+        view.backgroundColor = backgroundColorTypeValue
     }
     
     @IBAction func playPauseAction(_ sender: UIButton) {
@@ -114,11 +115,6 @@ class TextScrollerViewController: UIViewController {
         UIView.animate(withDuration: animationDuration, animations: {
             self.playTextView.contentOffset = newOffset
         })
-        
-        print ("Bala content size = \(self.playTextView.contentSize)")
-        print ("Bala content size.width = \(self.playTextView.contentSize)")
-        print ("Bala content Offset = \(self.playTextView.contentOffset)")
-        print ("Bala content Offset.y = \(self.playTextView.contentOffset.y)")
     }
     
     func pointsPerSecond() -> CGFloat {
@@ -143,4 +139,18 @@ class TextScrollerViewController: UIViewController {
     }
     */
 
+}
+
+extension UIColor {
+    class func blueAccentColor() -> UIColor {
+        return UIColor(red: 33/255, green: 150/255, blue:243/255 , alpha:1.00)
+    }
+    
+    class func orangeAccentColor() -> UIColor {
+        return UIColor(red: 255/255, green: 145/255, blue:0/255 , alpha:0.85)
+    }
+    
+    class func whiteAccentColor() -> UIColor {
+        return UIColor(red: 249/255, green: 249/255, blue:249/255 , alpha:1.00)
+    }
 }

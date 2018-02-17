@@ -18,8 +18,8 @@ class SettingsDetailViewController: UIViewController, UITableViewDelegate, UITab
     
     var index = 0
     
-    var colorsTitleArray = ["Cave Black", "Mercury Grey", "Royal Blue", "Fiery Red", "Sunny Yellow"]
-    var colorsValueArray = [UIColor.black, UIColor.lightGray, UIColor.blue, UIColor.red, UIColor.yellow]
+    var colorsTitleArray = ["Cave Black", "Mercury Grey", "Chalk White", "Royal Blue", "Light Sapphire", "Fiery Red", "Sunset Orange", "Sunflower Yellow"]
+    var colorsValueArray = [UIColor.black, UIColor.gray, UIColor.whiteAccentColor(), UIColor.blue, UIColor.blueAccentColor(), UIColor.red, UIColor.orangeAccentColor(), UIColor.yellow]
     
     private var textSizeValue: Float = 1.0
     private var scrollSpeedValue: Float = 1.0
@@ -30,15 +30,16 @@ class SettingsDetailViewController: UIViewController, UITableViewDelegate, UITab
         
         self.colorsTableView!.register(UINib(nibName: "PromptDataTableViewCell", bundle: nil), forCellReuseIdentifier: "promptDataTableViewCell")
         
+        self.sliderTitleLabel.isHidden = true
+        
         switch index {
         case 0:
             self.colorsTableView.isHidden = true
-            self.sliderTitleLabel.text = "Text Size:"
             if UserDefaults.standard.float(forKey: "textSize") > 0.0 {
                 textSizeValue = UserDefaults.standard.float(forKey: "textSize")
             }
             self.speedSlider.value = textSizeValue
-            self.sliderValueLabel.text = "\(roundf(textSizeValue*20))"
+            self.sliderValueLabel.text = "\(roundf(textSizeValue*25))"
         case 1:
             selectSpecifiedTableViewCell(withString: UserDefaults.standard.string(forKey: "textColorType"))
             self.speedSlider.isHidden = true
@@ -51,7 +52,6 @@ class SettingsDetailViewController: UIViewController, UITableViewDelegate, UITab
             break
         case 3:
             self.colorsTableView.isHidden = true
-            self.sliderTitleLabel.text = "Scroll Speed Value:"
             if UserDefaults.standard.float(forKey: "scrollSpeed") > 0.0 {
                 scrollSpeedValue = UserDefaults.standard.float(forKey: "scrollSpeed")
             }
@@ -63,7 +63,6 @@ class SettingsDetailViewController: UIViewController, UITableViewDelegate, UITab
     }
 
     @IBAction func sliderValueChaged(_ sender: Any) {
-        print ("Bala slider value = \(speedSlider.value)")
         switch index {
         case 0:
             textSizeValue = speedSlider.value
@@ -117,7 +116,6 @@ class SettingsDetailViewController: UIViewController, UITableViewDelegate, UITab
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "promptDataTableViewCell") as! PromptDataTableViewCell
         
-        print ("Bala color in table view cell= \(colorsTitleArray[indexPath.row])")
         cell.selectionStyle = .none
         cell.textTitleLabel.text = colorsTitleArray[indexPath.row]
         cell.snapShotImageView.backgroundColor = colorsValueArray[indexPath.row]
@@ -127,15 +125,14 @@ class SettingsDetailViewController: UIViewController, UITableViewDelegate, UITab
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         if let cell = tableView.cellForRow(at: indexPath) {
-            print ("Bala row selected = \(indexPath.row)")
             colorType = colorsTitleArray[indexPath.row]
             cell.accessoryType = .checkmark
+            cell.tintColor = UIColor.orangeAccentColor()
         }
     }
     
     func tableView(_ tableView: UITableView, didDeselectRowAt indexPath: IndexPath) {
         if let cell = tableView.cellForRow(at: indexPath) {
-            print ("Bala row unselected = \(indexPath.row)")
             cell.accessoryType = .none
         }
     }
