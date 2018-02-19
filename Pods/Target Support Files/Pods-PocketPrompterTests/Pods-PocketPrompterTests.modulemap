@@ -1,0 +1,6 @@
+framework module Pods_PocketPrompterTests {
+  umbrella header "Pods-PocketPrompterTests-umbrella.h"
+
+  export *
+  module * { export * }
+}

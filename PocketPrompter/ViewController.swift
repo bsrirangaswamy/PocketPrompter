@@ -8,6 +8,7 @@
 
 import UIKit
 import CoreData
+import Crashlytics
 
 class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
@@ -20,7 +21,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        // Do any additional setup after loading the view, typically from a nib.
         self.userDataTableView!.register(UINib(nibName: "PromptDataTableViewCell", bundle: nil), forCellReuseIdentifier: "promptDataTableViewCell")
         self.navigationController?.navigationBar.tintColor = UIColor.whiteAccentColor()
     }
