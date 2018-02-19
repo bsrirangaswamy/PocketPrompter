@@ -64,7 +64,7 @@ class ImageRecognizerViewController: UIViewController, UINavigationControllerDel
         //        view.endEditing(true)
         //        moveViewDown()
         // 2
-        let imagePickerActionSheet = UIAlertController(title: "Snap/Upload Photo",
+        let imagePickerAlertController = UIAlertController(title: "Snap/Upload Photo",
                                                        message: nil, preferredStyle: .actionSheet)
         // 3
         if UIImagePickerController.isSourceTypeAvailable(.camera) {
@@ -77,7 +77,7 @@ class ImageRecognizerViewController: UIViewController, UINavigationControllerDel
                                                              animated: true,
                                                              completion: nil)
             }
-            imagePickerActionSheet.addAction(cameraButton)
+            imagePickerAlertController.addAction(cameraButton)
         }
         // 4
         let libraryButton = UIAlertAction(title: "Choose Existing",
@@ -89,14 +89,18 @@ class ImageRecognizerViewController: UIViewController, UINavigationControllerDel
                                                          animated: true,
                                                          completion: nil)
         }
-        imagePickerActionSheet.addAction(libraryButton)
+        imagePickerAlertController.addAction(libraryButton)
         // 5
         let cancelButton = UIAlertAction(title: "Cancel",
                                          style: .cancel) { (alert) -> Void in
         }
-        imagePickerActionSheet.addAction(cancelButton)
+        imagePickerAlertController.addAction(cancelButton)
         // 6
-        present(imagePickerActionSheet, animated: true,
+        imagePickerAlertController.popoverPresentationController?.permittedArrowDirections = UIPopoverArrowDirection(rawValue: 0)
+        imagePickerAlertController.popoverPresentationController?.sourceView = self.view
+        imagePickerAlertController.popoverPresentationController?.sourceRect = CGRect(x: self.view.bounds.midX, y: self.view.bounds.midY, width: 0, height: 0)
+        
+        present(imagePickerAlertController, animated: true,
                 completion: nil)
     }
     
