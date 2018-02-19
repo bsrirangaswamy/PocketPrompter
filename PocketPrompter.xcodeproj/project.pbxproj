@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		203E984DAC9774A9BB76CCCE /* Pods_PocketPrompter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 31FC29A1FE14D4CD457D7C3C /* Pods_PocketPrompter.framework */; };
 		2D2083B81FE016DF00F5DA3E /* TextScrollerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D2083B71FE016DF00F5DA3E /* TextScrollerViewController.swift */; };
 		2D2083BE1FF3449300F5DA3E /* SettingsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D2083BD1FF3449300F5DA3E /* SettingsTableViewController.swift */; };
 		2D2083BF1FF3449300F5DA3E /* SettingsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D2083BD1FF3449300F5DA3E /* SettingsTableViewController.swift */; };
@@ -33,6 +34,9 @@
 		2D5E52141F50555E00263E38 /* CoreImage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2D5E52131F50555E00263E38 /* CoreImage.framework */; };
 		2D5E52161F50558500263E38 /* libstdc++.6.0.9.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 2D5E52151F50558500263E38 /* libstdc++.6.0.9.tbd */; };
 		2D8718CA1F505C9F00303221 /* PhantomBridger.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D8718C91F505C9F00303221 /* PhantomBridger.m */; };
+		2D8B4B67203A070A005B1454 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 2D8B4B66203A070A005B1454 /* GoogleService-Info.plist */; };
+		2D8B4B68203A070A005B1454 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 2D8B4B66203A070A005B1454 /* GoogleService-Info.plist */; };
+		2D8B4B69203A070A005B1454 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 2D8B4B66203A070A005B1454 /* GoogleService-Info.plist */; };
 		2D9D3F6F1F73E78C005A6810 /* PromptDataTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D9D3F6D1F73E78C005A6810 /* PromptDataTableViewCell.swift */; };
 		2D9D3F701F73E78C005A6810 /* PromptDataTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D9D3F6D1F73E78C005A6810 /* PromptDataTableViewCell.swift */; };
 		2D9D3F711F73E78C005A6810 /* PromptDataTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D9D3F6D1F73E78C005A6810 /* PromptDataTableViewCell.swift */; };
@@ -41,6 +45,8 @@
 		2D9D3F741F73E78C005A6810 /* PromptDataTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2D9D3F6E1F73E78C005A6810 /* PromptDataTableViewCell.xib */; };
 		2DD6FB342033F3A900BFCA2D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2D4830861F5050FD00B12DE7 /* Assets.xcassets */; };
 		2DD6FB352033F3AA00BFCA2D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2D4830861F5050FD00B12DE7 /* Assets.xcassets */; };
+		9E265008141FFFE012D803FF /* Pods_PocketPrompterUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 679A99DD988099EDED549C62 /* Pods_PocketPrompterUITests.framework */; };
+		B6DE45AB0FFBF1E41A77FD23 /* Pods_PocketPrompterTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 826E945637F1CF0890B917EC /* Pods_PocketPrompterTests.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -61,6 +67,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		039ECCF13ED9C3948B27E411 /* Pods-PocketPrompter.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PocketPrompter.debug.xcconfig"; path = "Pods/Target Support Files/Pods-PocketPrompter/Pods-PocketPrompter.debug.xcconfig"; sourceTree = "<group>"; };
+		29B45D840CA42D28071EBA04 /* Pods-PocketPrompterTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PocketPrompterTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-PocketPrompterTests/Pods-PocketPrompterTests.debug.xcconfig"; sourceTree = "<group>"; };
 		2D2083B71FE016DF00F5DA3E /* TextScrollerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextScrollerViewController.swift; sourceTree = "<group>"; };
 		2D2083BD1FF3449300F5DA3E /* SettingsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsTableViewController.swift; sourceTree = "<group>"; };
 		2D2083C91FF5A8D200F5DA3E /* SettingsDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsDetailViewController.swift; sourceTree = "<group>"; };
@@ -86,8 +94,16 @@
 		2D5E52151F50558500263E38 /* libstdc++.6.0.9.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libstdc++.6.0.9.tbd"; path = "usr/lib/libstdc++.6.0.9.tbd"; sourceTree = SDKROOT; };
 		2D8718C81F505C9F00303221 /* PocketPrompter-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "PocketPrompter-Bridging-Header.h"; sourceTree = "<group>"; };
 		2D8718C91F505C9F00303221 /* PhantomBridger.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PhantomBridger.m; sourceTree = "<group>"; };
+		2D8B4B66203A070A005B1454 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		2D9D3F6D1F73E78C005A6810 /* PromptDataTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PromptDataTableViewCell.swift; path = Cells/PromptDataTableViewCell.swift; sourceTree = "<group>"; };
 		2D9D3F6E1F73E78C005A6810 /* PromptDataTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = PromptDataTableViewCell.xib; path = Cells/PromptDataTableViewCell.xib; sourceTree = "<group>"; };
+		31FC29A1FE14D4CD457D7C3C /* Pods_PocketPrompter.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PocketPrompter.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		644F84CAEA7B630C5E0025F0 /* Pods-PocketPrompterUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PocketPrompterUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-PocketPrompterUITests/Pods-PocketPrompterUITests.release.xcconfig"; sourceTree = "<group>"; };
+		679A99DD988099EDED549C62 /* Pods_PocketPrompterUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PocketPrompterUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		800B51BA7BB05A19B687E079 /* Pods-PocketPrompterTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PocketPrompterTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-PocketPrompterTests/Pods-PocketPrompterTests.release.xcconfig"; sourceTree = "<group>"; };
+		826E945637F1CF0890B917EC /* Pods_PocketPrompterTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PocketPrompterTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		BDBA454E9BADCFA03E900731 /* Pods-PocketPrompter.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PocketPrompter.release.xcconfig"; path = "Pods/Target Support Files/Pods-PocketPrompter/Pods-PocketPrompter.release.xcconfig"; sourceTree = "<group>"; };
+		F3DBAEAA21413892D9A9A518 /* Pods-PocketPrompterUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PocketPrompterUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-PocketPrompterUITests/Pods-PocketPrompterUITests.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -98,6 +114,7 @@
 				2D5094B41F505A6800FFBFB4 /* TesseractOCR.framework in Frameworks */,
 				2D5E52161F50558500263E38 /* libstdc++.6.0.9.tbd in Frameworks */,
 				2D5E52141F50555E00263E38 /* CoreImage.framework in Frameworks */,
+				203E984DAC9774A9BB76CCCE /* Pods_PocketPrompter.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -105,6 +122,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B6DE45AB0FFBF1E41A77FD23 /* Pods_PocketPrompterTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -112,6 +130,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9E265008141FFFE012D803FF /* Pods_PocketPrompterUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -134,6 +153,7 @@
 				2D48309E1F5050FE00B12DE7 /* PocketPrompterUITests */,
 				2D48307A1F5050FD00B12DE7 /* Products */,
 				2D5E52121F50555E00263E38 /* Frameworks */,
+				AAD4AF0861969BACE062EF7A /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -162,6 +182,7 @@
 				2D4830861F5050FD00B12DE7 /* Assets.xcassets */,
 				2D4830881F5050FD00B12DE7 /* LaunchScreen.storyboard */,
 				2D48308B1F5050FD00B12DE7 /* Info.plist */,
+				2D8B4B66203A070A005B1454 /* GoogleService-Info.plist */,
 				2D4830831F5050FD00B12DE7 /* PocketPrompter.xcdatamodeld */,
 				2D3523791F62C1420057AB6E /* Model */,
 				2D5094B51F505A7100FFBFB4 /* tessdata */,
@@ -195,8 +216,24 @@
 			children = (
 				2D5E52151F50558500263E38 /* libstdc++.6.0.9.tbd */,
 				2D5E52131F50555E00263E38 /* CoreImage.framework */,
+				31FC29A1FE14D4CD457D7C3C /* Pods_PocketPrompter.framework */,
+				826E945637F1CF0890B917EC /* Pods_PocketPrompterTests.framework */,
+				679A99DD988099EDED549C62 /* Pods_PocketPrompterUITests.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		AAD4AF0861969BACE062EF7A /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				039ECCF13ED9C3948B27E411 /* Pods-PocketPrompter.debug.xcconfig */,
+				BDBA454E9BADCFA03E900731 /* Pods-PocketPrompter.release.xcconfig */,
+				29B45D840CA42D28071EBA04 /* Pods-PocketPrompterTests.debug.xcconfig */,
+				800B51BA7BB05A19B687E079 /* Pods-PocketPrompterTests.release.xcconfig */,
+				F3DBAEAA21413892D9A9A518 /* Pods-PocketPrompterUITests.debug.xcconfig */,
+				644F84CAEA7B630C5E0025F0 /* Pods-PocketPrompterUITests.release.xcconfig */,
+			);
+			name = Pods;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -206,9 +243,13 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 2D4830A41F5050FE00B12DE7 /* Build configuration list for PBXNativeTarget "PocketPrompter" */;
 			buildPhases = (
+				309E85CD41DB3C888FCB6DD8 /* [CP] Check Pods Manifest.lock */,
 				2D4830751F5050FD00B12DE7 /* Sources */,
 				2D4830761F5050FD00B12DE7 /* Frameworks */,
 				2D4830771F5050FD00B12DE7 /* Resources */,
+				B5CAB56FDAAE73DE4D1FE49D /* [CP] Embed Pods Frameworks */,
+				FE2587438F07D4C773BBD206 /* [CP] Copy Pods Resources */,
+				2D8C0FA8203A0F6800F04F21 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -223,9 +264,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 2D4830A71F5050FE00B12DE7 /* Build configuration list for PBXNativeTarget "PocketPrompterTests" */;
 			buildPhases = (
+				904BB6BAD82DF9DDF4975EB9 /* [CP] Check Pods Manifest.lock */,
 				2D48308C1F5050FE00B12DE7 /* Sources */,
 				2D48308D1F5050FE00B12DE7 /* Frameworks */,
 				2D48308E1F5050FE00B12DE7 /* Resources */,
+				654C2AC79FF8B0DC6FCDF2B9 /* [CP] Embed Pods Frameworks */,
+				6DC70DAAB873EE35CAF3A46B /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -241,9 +285,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 2D4830AA1F5050FE00B12DE7 /* Build configuration list for PBXNativeTarget "PocketPrompterUITests" */;
 			buildPhases = (
+				5F0C932AEECB61D63B19EDC8 /* [CP] Check Pods Manifest.lock */,
 				2D4830971F5050FE00B12DE7 /* Sources */,
 				2D4830981F5050FE00B12DE7 /* Frameworks */,
 				2D4830991F5050FE00B12DE7 /* Resources */,
+				C841D4141F997FAC86472226 /* [CP] Embed Pods Frameworks */,
+				E289F2C1720148EBED1A3820 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -315,6 +362,7 @@
 				2D4830871F5050FD00B12DE7 /* Assets.xcassets in Resources */,
 				2D4830821F5050FD00B12DE7 /* Main.storyboard in Resources */,
 				2D9D3F721F73E78C005A6810 /* PromptDataTableViewCell.xib in Resources */,
+				2D8B4B67203A070A005B1454 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -324,6 +372,7 @@
 			files = (
 				2DD6FB342033F3A900BFCA2D /* Assets.xcassets in Resources */,
 				2D9D3F731F73E78C005A6810 /* PromptDataTableViewCell.xib in Resources */,
+				2D8B4B68203A070A005B1454 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -333,10 +382,176 @@
 			files = (
 				2DD6FB352033F3AA00BFCA2D /* Assets.xcassets in Resources */,
 				2D9D3F741F73E78C005A6810 /* PromptDataTableViewCell.xib in Resources */,
+				2D8B4B69203A070A005B1454 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		2D8C0FA8203A0F6800F04F21 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Fabric/run\" 5d78679cb1db3c700930e14817e4fa156ede99ee c380ef76e2cd139ec2778b92517557e63b6f06b74a0c3e8dec30ee8a4f9504dd";
+		};
+		309E85CD41DB3C888FCB6DD8 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-PocketPrompter-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		5F0C932AEECB61D63B19EDC8 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-PocketPrompterUITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		654C2AC79FF8B0DC6FCDF2B9 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-PocketPrompterTests/Pods-PocketPrompterTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		6DC70DAAB873EE35CAF3A46B /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-PocketPrompterTests/Pods-PocketPrompterTests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		904BB6BAD82DF9DDF4975EB9 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-PocketPrompterTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		B5CAB56FDAAE73DE4D1FE49D /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-PocketPrompter/Pods-PocketPrompter-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
+				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-PocketPrompter/Pods-PocketPrompter-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		C841D4141F997FAC86472226 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-PocketPrompterUITests/Pods-PocketPrompterUITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		E289F2C1720148EBED1A3820 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-PocketPrompterUITests/Pods-PocketPrompterUITests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		FE2587438F07D4C773BBD206 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-PocketPrompter/Pods-PocketPrompter-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		2D4830751F5050FD00B12DE7 /* Sources */ = {
@@ -441,7 +656,7 @@
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
-				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
@@ -514,6 +729,7 @@
 		};
 		2D4830A51F5050FE00B12DE7 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 039ECCF13ED9C3948B27E411 /* Pods-PocketPrompter.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_CXX_LIBRARY = "compiler-default";
@@ -526,7 +742,10 @@
 				);
 				INFOPLIST_FILE = PocketPrompter/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				OTHER_LDFLAGS = "-lstdc++";
+				OTHER_LDFLAGS = (
+					"-lstdc++",
+					"$(inherited)",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = PriBa.PocketPrompter;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "PocketPrompter/PocketPrompter-Bridging-Header.h";
@@ -537,6 +756,7 @@
 		};
 		2D4830A61F5050FE00B12DE7 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = BDBA454E9BADCFA03E900731 /* Pods-PocketPrompter.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_CXX_LIBRARY = "compiler-default";
@@ -549,7 +769,10 @@
 				);
 				INFOPLIST_FILE = PocketPrompter/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				OTHER_LDFLAGS = "-lstdc++";
+				OTHER_LDFLAGS = (
+					"-lstdc++",
+					"$(inherited)",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = PriBa.PocketPrompter;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "PocketPrompter/PocketPrompter-Bridging-Header.h";
@@ -559,6 +782,7 @@
 		};
 		2D4830A81F5050FE00B12DE7 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 29B45D840CA42D28071EBA04 /* Pods-PocketPrompterTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -566,7 +790,10 @@
 				DEVELOPMENT_TEAM = 8PXGQZP8AE;
 				INFOPLIST_FILE = PocketPrompterTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				OTHER_LDFLAGS = "-lstdc++";
+				OTHER_LDFLAGS = (
+					"-lstdc++",
+					"$(inherited)",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = PriBa.PocketPrompterTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
@@ -576,6 +803,7 @@
 		};
 		2D4830A91F5050FE00B12DE7 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 800B51BA7BB05A19B687E079 /* Pods-PocketPrompterTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -583,7 +811,10 @@
 				DEVELOPMENT_TEAM = 8PXGQZP8AE;
 				INFOPLIST_FILE = PocketPrompterTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				OTHER_LDFLAGS = "-lstdc++";
+				OTHER_LDFLAGS = (
+					"-lstdc++",
+					"$(inherited)",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = PriBa.PocketPrompterTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
@@ -593,13 +824,17 @@
 		};
 		2D4830AB1F5050FE00B12DE7 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = F3DBAEAA21413892D9A9A518 /* Pods-PocketPrompterUITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CLANG_CXX_LIBRARY = "compiler-default";
 				DEVELOPMENT_TEAM = 8PXGQZP8AE;
 				INFOPLIST_FILE = PocketPrompterUITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				OTHER_LDFLAGS = "-lstdc++";
+				OTHER_LDFLAGS = (
+					"-lstdc++",
+					"$(inherited)",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = PriBa.PocketPrompterUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
@@ -609,13 +844,17 @@
 		};
 		2D4830AC1F5050FE00B12DE7 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 644F84CAEA7B630C5E0025F0 /* Pods-PocketPrompterUITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CLANG_CXX_LIBRARY = "compiler-default";
 				DEVELOPMENT_TEAM = 8PXGQZP8AE;
 				INFOPLIST_FILE = PocketPrompterUITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				OTHER_LDFLAGS = "-lstdc++";
+				OTHER_LDFLAGS = (
+					"-lstdc++",
+					"$(inherited)",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = PriBa.PocketPrompterUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
