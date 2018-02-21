@@ -24,8 +24,8 @@ PODS:
   - nanopb/encode (0.3.8)
 
 DEPENDENCIES:
-  - Crashlytics (~> 3.10.0)
-  - Fabric (~> 1.7.3)
+  - Crashlytics
+  - Fabric
   - Firebase/Core
 
 SPEC CHECKSUMS:
@@ -38,6 +38,6 @@ SPEC CHECKSUMS:
   GoogleToolboxForMac: 2501e2ad72a52eb3dfe7bd9aee7dad11b858bd20
   nanopb: 5601e6bca2dbf1ed831b519092ec110f66982ca3
 
-PODFILE CHECKSUM: 8fac5457b1adc5c7386c92b1b0bc22c52e588be7
+PODFILE CHECKSUM: 60885493eac93dc84d9e6166a18a944f2d923e10
 
 COCOAPODS: 1.4.0

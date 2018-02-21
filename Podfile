@@ -7,8 +7,8 @@ target 'PocketPrompter' do
 
   # Pods for PocketPrompter
   pod 'Firebase/Core'
-  pod 'Fabric', '~> 1.7.3'
-  pod 'Crashlytics', '~> 3.10.0'
+  pod 'Fabric'
+  pod 'Crashlytics'
 
   target 'PocketPrompterTests' do
     inherit! :search_paths

@@ -249,7 +249,7 @@
 				2D4830771F5050FD00B12DE7 /* Resources */,
 				B5CAB56FDAAE73DE4D1FE49D /* [CP] Embed Pods Frameworks */,
 				FE2587438F07D4C773BBD206 /* [CP] Copy Pods Resources */,
-				2D8C0FA8203A0F6800F04F21 /* ShellScript */,
+				2D8C0FA8203A0F6800F04F21 /* Run Script */,
 			);
 			buildRules = (
 			);
@@ -314,7 +314,7 @@
 				TargetAttributes = {
 					2D4830781F5050FD00B12DE7 = {
 						CreatedOnToolsVersion = 8.3.3;
-						DevelopmentTeam = 8PXGQZP8AE;
+						DevelopmentTeam = V96BW4UBVM;
 						LastSwiftMigration = 0830;
 						ProvisioningStyle = Automatic;
 					};
@@ -389,18 +389,19 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		2D8C0FA8203A0F6800F04F21 /* ShellScript */ = {
+		2D8C0FA8203A0F6800F04F21 /* Run Script */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
+			name = "Run Script";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Fabric/run\" 5d78679cb1db3c700930e14817e4fa156ede99ee c380ef76e2cd139ec2778b92517557e63b6f06b74a0c3e8dec30ee8a4f9504dd";
+			shellScript = "\"${PODS_ROOT}/Fabric/run\" 4e05d03d6acb921a87e28027207cc5c408b07435 451910e614955d31fc7cafa2a96f755fdabbc5b9d4e337c2c66c0c058d467415";
 		};
 		309E85CD41DB3C888FCB6DD8 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -734,7 +735,9 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_CXX_LIBRARY = "compiler-default";
 				CLANG_ENABLE_MODULES = YES;
-				DEVELOPMENT_TEAM = 8PXGQZP8AE;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = V96BW4UBVM;
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -746,8 +749,9 @@
 					"-lstdc++",
 					"$(inherited)",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = PriBa.PocketPrompter;
+				PRODUCT_BUNDLE_IDENTIFIER = PB.PocketPrompter;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "PocketPrompter/PocketPrompter-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 3.0;
@@ -761,7 +765,9 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_CXX_LIBRARY = "compiler-default";
 				CLANG_ENABLE_MODULES = YES;
-				DEVELOPMENT_TEAM = 8PXGQZP8AE;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = V96BW4UBVM;
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -773,8 +779,9 @@
 					"-lstdc++",
 					"$(inherited)",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = PriBa.PocketPrompter;
+				PRODUCT_BUNDLE_IDENTIFIER = PB.PocketPrompter;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "PocketPrompter/PocketPrompter-Bridging-Header.h";
 				SWIFT_VERSION = 3.0;
 			};
