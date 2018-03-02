@@ -33,6 +33,9 @@
 		2D5094B61F505A7100FFBFB4 /* tessdata in Resources */ = {isa = PBXBuildFile; fileRef = 2D5094B51F505A7100FFBFB4 /* tessdata */; };
 		2D5E52141F50555E00263E38 /* CoreImage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2D5E52131F50555E00263E38 /* CoreImage.framework */; };
 		2D5E52161F50558500263E38 /* libstdc++.6.0.9.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 2D5E52151F50558500263E38 /* libstdc++.6.0.9.tbd */; };
+		2D6621BF2048411800238F96 /* Globals.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D6621BE2048411800238F96 /* Globals.swift */; };
+		2D6621C02048411800238F96 /* Globals.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D6621BE2048411800238F96 /* Globals.swift */; };
+		2D6621C12048411800238F96 /* Globals.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D6621BE2048411800238F96 /* Globals.swift */; };
 		2D8718CA1F505C9F00303221 /* PhantomBridger.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D8718C91F505C9F00303221 /* PhantomBridger.m */; };
 		2D8B4B67203A070A005B1454 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 2D8B4B66203A070A005B1454 /* GoogleService-Info.plist */; };
 		2D8B4B68203A070A005B1454 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 2D8B4B66203A070A005B1454 /* GoogleService-Info.plist */; };
@@ -92,6 +95,7 @@
 		2D5094B51F505A7100FFBFB4 /* tessdata */ = {isa = PBXFileReference; lastKnownFileType = folder; name = tessdata; path = "Tesseract Resources/tessdata"; sourceTree = "<group>"; };
 		2D5E52131F50555E00263E38 /* CoreImage.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreImage.framework; path = System/Library/Frameworks/CoreImage.framework; sourceTree = SDKROOT; };
 		2D5E52151F50558500263E38 /* libstdc++.6.0.9.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libstdc++.6.0.9.tbd"; path = "usr/lib/libstdc++.6.0.9.tbd"; sourceTree = SDKROOT; };
+		2D6621BE2048411800238F96 /* Globals.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Globals.swift; sourceTree = "<group>"; };
 		2D8718C81F505C9F00303221 /* PocketPrompter-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "PocketPrompter-Bridging-Header.h"; sourceTree = "<group>"; };
 		2D8718C91F505C9F00303221 /* PhantomBridger.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PhantomBridger.m; sourceTree = "<group>"; };
 		2D8B4B66203A070A005B1454 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
@@ -185,6 +189,7 @@
 				2D8B4B66203A070A005B1454 /* GoogleService-Info.plist */,
 				2D4830831F5050FD00B12DE7 /* PocketPrompter.xcdatamodeld */,
 				2D3523791F62C1420057AB6E /* Model */,
+				2D6621C22048412200238F96 /* Utilities */,
 				2D5094B51F505A7100FFBFB4 /* tessdata */,
 				2D5094B31F505A6800FFBFB4 /* TesseractOCR.framework */,
 				2D8718C91F505C9F00303221 /* PhantomBridger.m */,
@@ -221,6 +226,14 @@
 				679A99DD988099EDED549C62 /* Pods_PocketPrompterUITests.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		2D6621C22048412200238F96 /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				2D6621BE2048411800238F96 /* Globals.swift */,
+			);
+			name = Utilities;
 			sourceTree = "<group>";
 		};
 		AAD4AF0861969BACE062EF7A /* Pods */ = {
@@ -564,6 +577,7 @@
 				2D9D3F6F1F73E78C005A6810 /* PromptDataTableViewCell.swift in Sources */,
 				2D2083B81FE016DF00F5DA3E /* TextScrollerViewController.swift in Sources */,
 				2D35237B1F62C1850057AB6E /* PromptData.swift in Sources */,
+				2D6621BF2048411800238F96 /* Globals.swift in Sources */,
 				2D35236E1F543D120057AB6E /* ImageRecognizerViewController.swift in Sources */,
 				2D8718CA1F505C9F00303221 /* PhantomBridger.m in Sources */,
 				2D4830851F5050FD00B12DE7 /* PocketPrompter.xcdatamodeld in Sources */,
@@ -581,6 +595,7 @@
 				2D35237C1F62C1850057AB6E /* PromptData.swift in Sources */,
 				2D4830951F5050FE00B12DE7 /* PocketPrompterTests.swift in Sources */,
 				2D2083CB1FF5A8D200F5DA3E /* SettingsDetailViewController.swift in Sources */,
+				2D6621C02048411800238F96 /* Globals.swift in Sources */,
 				2D9D3F701F73E78C005A6810 /* PromptDataTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -594,6 +609,7 @@
 				2D35237D1F62C1850057AB6E /* PromptData.swift in Sources */,
 				2D4830A01F5050FE00B12DE7 /* PocketPrompterUITests.swift in Sources */,
 				2D2083CC1FF5A8D200F5DA3E /* SettingsDetailViewController.swift in Sources */,
+				2D6621C12048411800238F96 /* Globals.swift in Sources */,
 				2D9D3F711F73E78C005A6810 /* PromptDataTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -677,9 +693,10 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
-				OTHER_SWIFT_FLAGS = "-D DEBUG";
+				OTHER_SWIFT_FLAGS = "";
+				"OTHER_SWIFT_FLAGS[arch=*]" = "-D DEBUG";
 				SDKROOT = iphoneos;
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
